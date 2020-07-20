@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { makeStyles } from "@material-ui/styles";
-import "./Card.css";
+import "./style/Sidebar.css";
 
 const useStyles = makeStyles({
   movingSlider: (props) => ({
@@ -10,8 +10,8 @@ const useStyles = makeStyles({
     width: "70px",
     height: "25px",
     borderRadius: "5px",
-    backgroundColor: "lightgrey",
-    opacity: "0.4",
+    backgroundColor: "#eeeeee",
+    opacity: "0.7",
     transition: "all 0.4s ease-out",
     transform: `translate(0, ${props.translate}%)`,
   }),
@@ -22,6 +22,7 @@ export default () => {
   const [onMenu, setOnMenu] = useState("");
   const [isShown, setIsShown] = useState(false);
   const [change, setChange] = useState(false);
+  const [icon, setIcon] = useState(false);
   const [curridx, setCurridx] = useState(0);
   const [Top, setTop] = useState(0);
   const [Left, setLeft] = useState(0);
@@ -42,6 +43,13 @@ export default () => {
     setLeft(posref[0].current.offsetLeft);
   }, []);
 
+  const logo = [
+    "ri-apps-line",
+    "ri-code-s-slash-line",
+    "ri-rhythm-fill",
+    "ri-account-circle-line",
+  ];
+
   const menus = ["Home", "Projects", "About Me", "Contact"].map(
     (menu, index) => {
       return (
@@ -57,19 +65,28 @@ export default () => {
             setOnMenu("");
           }}
           onClick={() => {
-            setChange(true);
-            setCurridx(index);
-            setTranslate((index - curridx) * 120);
+            if (onMenu !== onSelect) {
+              setChange(true);
+              setTimeout(() => {
+                setIcon(true);
+              }, 200);
 
-            setOnSelect("");
-            setTimeout(() => {
-              setOnSelect(menu);
-              setLeft(posref[index].current.offsetLeft);
-              setTop(posref[index].current.offsetTop);
-              setChange(false);
-            }, 300);
+              setCurridx(index);
+              setTranslate((index - curridx) * 120);
+              setOnSelect("");
+
+              setTimeout(() => {
+                setIcon(false);
+              }, 900);
+
+              setTimeout(() => {
+                setOnSelect(menu);
+                setLeft(posref[index].current.offsetLeft);
+                setTop(posref[index].current.offsetTop);
+                setChange(false);
+              }, 400);
+            }
           }}
-          disabled={change}
         >
           <span
             className={`card-text && ${
@@ -77,6 +94,17 @@ export default () => {
             }`}
           >
             {menu}
+          </span>
+          <span
+            style={{
+              marginRight: "6px",
+              marginTop: `${onSelect === "About Me" ? "1px" : "3px"}`,
+              fontSize: "10px",
+              transition: "all 0.1s ease-in-out",
+              opacity: "0.8",
+            }}
+          >
+            {!icon && menu == onSelect && <i className={logo[index]}></i>}
           </span>
         </div>
       );

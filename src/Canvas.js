@@ -1,10 +1,11 @@
 import React from "react";
-import "./Canvas.css";
+import "./style/Canvas.css";
+import Sidebar from "./Sidebar";
 
 export default () => {
   return (
     <div className="canvas">
-      <div className="content"></div>
+      <div></div>
     </div>
   );
 };

@@ -1,5 +1,4 @@
 .container-card {
-  padding-top: 2px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -7,7 +6,6 @@
   border-radius: 7px;
   height: 120px;
   width: 80px;
-  border: 1px solid lightgrey;
 }
 
 .card {
@@ -30,19 +28,19 @@
 }
 
 .card:hover {
-  background-color: lightgrey;
+  background-color: #eeeeee;
   cursor: pointer;
   font-weight: 500;
 }
 
 .selected-card {
-  background-color: lightgrey;
+  background-color: #eeeeee;
   cursor: pointer;
   font-weight: 500;
 }
 
 .selected-card span {
-  margin-right: 12px;
+  margin-right: 20px;
 }
 
 .card-text {
