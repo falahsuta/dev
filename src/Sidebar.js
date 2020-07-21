@@ -7,11 +7,11 @@ const useStyles = makeStyles({
     position: "absolute",
     top: props.Top,
     left: props.Left,
-    width: "120px",
+    width: "140px",
     height: "40px",
     borderRadius: "5px",
     backgroundColor: "#eeeeee",
-    opacity: "0.5",
+    opacity: "0.3",
     transition: "all 0.4s ease-out",
     transform: `translate(0, ${props.translate}%)`,
   }),
@@ -99,13 +99,13 @@ export default () => {
             style={{
               color: "rgba(70, 70, 70, 0.878)",
               marginRight: "17px",
-              marginTop: `${onSelect === "About Me" ? "1px" : "3px"}`,
+              marginTop: `${onSelect === "About Me" ? "1px" : "5px"}`,
               fontSize: "13px",
               transition: "all 0.1s ease-in-out",
               opacity: "0.8",
             }}
           >
-            {!icon && menu == onSelect && <i className={logo[index]}></i>}
+            {!icon && menu === onSelect && <i className={logo[index]}></i>}
           </span>
         </div>
       );

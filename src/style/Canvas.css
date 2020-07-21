@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: -370px auto;
+  margin: -260px auto;
   background-color: white;
   height: 190vh;
   width: 65%;
@@ -13,7 +13,7 @@
 }
 
 .center-side {
-  margin-top: 280px;
+  margin-top: 188px;
   margin-right: 10px;
 }
 
