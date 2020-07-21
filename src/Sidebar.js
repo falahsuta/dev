@@ -7,11 +7,11 @@ const useStyles = makeStyles({
     position: "absolute",
     top: props.Top,
     left: props.Left,
-    width: "70px",
-    height: "25px",
+    width: "120px",
+    height: "40px",
     borderRadius: "5px",
     backgroundColor: "#eeeeee",
-    opacity: "0.7",
+    opacity: "0.5",
     transition: "all 0.4s ease-out",
     transform: `translate(0, ${props.translate}%)`,
   }),
@@ -84,7 +84,7 @@ export default () => {
                 setLeft(posref[index].current.offsetLeft);
                 setTop(posref[index].current.offsetTop);
                 setChange(false);
-              }, 400);
+              }, 500);
             }
           }}
         >
@@ -97,9 +97,10 @@ export default () => {
           </span>
           <span
             style={{
-              marginRight: "6px",
+              color: "rgba(70, 70, 70, 0.878)",
+              marginRight: "17px",
               marginTop: `${onSelect === "About Me" ? "1px" : "3px"}`,
-              fontSize: "10px",
+              fontSize: "13px",
               transition: "all 0.1s ease-in-out",
               opacity: "0.8",
             }}
