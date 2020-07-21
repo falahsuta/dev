@@ -25,6 +25,7 @@
 .card span {
   margin-right: 7px;
   color: rgba(70, 70, 70, 0.678);
+  -webkit-user-select: none;
 }
 
 .card:hover {
