@@ -2,6 +2,9 @@ import React, { useState, useRef, useEffect } from "react";
 import { makeStyles } from "@material-ui/styles";
 import "./style/Sidebar.css";
 
+import { useDispatch } from "react-redux";
+import { selectNav } from "./actions";
+
 const useStyles = makeStyles({
   movingSlider: (props) => ({
     position: "absolute",
@@ -18,6 +21,8 @@ const useStyles = makeStyles({
 });
 
 export default () => {
+  const dispatch = useDispatch();
+
   const [onSelect, setOnSelect] = useState("Home");
   const [onMenu, setOnMenu] = useState("");
   const [isShown, setIsShown] = useState(false);
@@ -81,6 +86,8 @@ export default () => {
 
               setTimeout(() => {
                 setOnSelect(menu);
+                dispatch(selectNav(menu));
+
                 setLeft(posref[index].current.offsetLeft);
                 setTop(posref[index].current.offsetTop);
                 setChange(false);

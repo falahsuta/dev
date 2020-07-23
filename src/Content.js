@@ -3,6 +3,10 @@ import { makeStyles } from "@material-ui/styles";
 import { CSSTransition } from "react-transition-group";
 import "./style/Content.css";
 
+import HorizontalScroll from "react-scroll-horizontal";
+
+import { useSelector } from "react-redux";
+
 const useStyles = makeStyles({
   opa: {
     opacity: "0",
@@ -25,59 +29,30 @@ const useStyles = makeStyles({
 });
 
 export default () => {
-  const [nav, setNav] = useState("Home");
-  const [project, setProject] = useState(false);
+  const nav = useSelector((state) => state.nav);
   const classes = useStyles();
 
   const content = {
     Home: "Hi, Im falah from from la",
-    About: { title: "inititle", desc: "inidesc" },
+    "About Me": { title: "inititle", desc: "inidesc" },
   };
 
   const link =
     "https://scontent-ort2-1.cdninstagram.com/v/t51.2885-19/66783490_416730902531381_5845601586805473280_n.jpg?_nc_ht=scontent-ort2-1.cdninstagram.com&_nc_ohc=6fy60-UU2IwAX9X0dLI&oh=72f43fda338b81d0d9f00103828ee541&oe=5F42A558";
 
-  useEffect(() => {}, [nav]);
+  const child = { width: `300em`, height: `100%` };
 
   return (
     <div className="content">
       <div>{nav}</div>
-      <div
-        onClick={() => {
-          setNav("Home");
-        }}
-        className={classes.basic}
-      >
-        Home
-      </div>
-
-      <div
-        onClick={() => {
-          setNav("Project");
-        }}
-        className={classes.basic}
-      >
-        Project
-      </div>
-
-      <div
-        onClick={() => {
-          setNav("About");
-        }}
-        className={classes.basic}
-      >
-        About
-      </div>
 
       {nav == "Home" && <div>{content[nav]}</div>}
 
       <CSSTransition
-        in={nav === "Project"}
+        in={nav === "Projects"}
         timeout={4300}
         classNames="project"
         unmountOnExit
-        // onEnter={() => setProject(true)}
-        // onExited={() => setProject(false)}
       >
         <div>
           <img style={{ width: "30%", borderRadius: "10px" }} src={link} />
@@ -85,23 +60,27 @@ export default () => {
       </CSSTransition>
 
       <CSSTransition
-        in={nav === "Project"}
+        in={nav === "Projects"}
         timeout={4300}
         classNames="title"
         unmountOnExit
-        // onEnter={() => setProject(true)}
-        // onExited={() => setProject(false)}
       >
         <div>
           <h1>ANIMATE THIS </h1>
         </div>
       </CSSTransition>
 
-      {nav == "About" && (
+      {nav == "About Me" && (
         <div>
           <h2>{content[nav].title}</h2>
           <div>{content[nav].desc}</div>
         </div>
+      )}
+
+      {nav === "Contact" && (
+        <HorizontalScroll>
+          <div style={child} />
+        </HorizontalScroll>
       )}
     </div>
   );

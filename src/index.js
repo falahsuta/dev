@@ -1,15 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Canvas from "./Canvas";
-import Animate from "./Animate";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import App from "./App";
+import reducers from "./reducers";
 
-const App = () => {
-  return (
-    <div>
-      <Canvas />
-      {/* <Animate /> */}
-    </div>
-  );
-};
-
-ReactDOM.render(<App />, document.querySelector("#root"));
+ReactDOM.render(
+  <Provider store={createStore(reducers)}>
+    <App />
+  </Provider>,
+  document.querySelector("#root")
+);
