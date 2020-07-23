@@ -4,3 +4,23 @@
   border-radius: 15px;
   border: solid 1px lightgrey;
 }
+
+.project-enter {
+  opacity: 0;
+  /* transform: translate(0.3em, 0.3em); */
+}
+.project-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity 4300ms, transform 4300ms;
+}
+
+.title-enter {
+  opacity: 0;
+  transform: translate(3.3em, 3.3em);
+}
+.title-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity 300ms, transform 300ms;
+}

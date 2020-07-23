@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     borderRadius: "5px",
     backgroundColor: "#eeeeee",
     opacity: "0.3",
-    transition: "all 0.4s ease-out",
+    transition: "all 0.4s ease-in-out",
     transform: `translate(0, ${props.translate}%)`,
   }),
 });
