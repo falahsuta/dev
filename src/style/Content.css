@@ -24,3 +24,74 @@
   transform: translate(0, 0);
   transition: opacity 300ms, transform 300ms;
 }
+
+.tile {
+  height: 100%;
+  width: 30em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tile-striped {
+  background: repeating-linear-gradient(
+    45deg,
+    purple,
+    violet 10px,
+    purple 10px,
+    violet 20px
+  );
+}
+.tile:nth-child(odd) {
+  background-color: purple;
+}
+.tile:nth-child(even) {
+  background-color: violet;
+}
+
+.alert-enter {
+  opacity: 0;
+  transform: translateY(-1em);
+}
+.alert-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.alert-exit {
+  opacity: 1;
+}
+.alert-exit-active {
+  opacity: 0;
+  transform: translateY(1em);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.ml10 {
+  position: relative;
+  font-weight: 900;
+  font-size: 4em;
+}
+
+.ml10 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml10 .letter {
+  display: inline-block;
+  line-height: 1em;
+  transform-origin: 0 0;
+}
+
+.font-anime {
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  font-stretch: normal;
+}

@@ -9,7 +9,7 @@ export default class App extends React.Component {
 
   genData() {
     var data = [];
-    var max = Math.random() * 20 + 1;
+    var max = 14;
 
     for (; --max > 0; ) {
       data.push({
@@ -53,8 +53,21 @@ export default class App extends React.Component {
         >
           Full Width
         </h1>
-        <div style={{ marginLeft: "600px" }}>
-          <div style={{ height: `22.7em`, width: "190em" }}>
+        <div
+          style={{
+            marginLeft: "600px",
+            padding: "50px",
+            border: "2px solid white",
+            borderRadius: "30px",
+            width: "190em",
+          }}
+        >
+          <div
+            style={{
+              height: `22.7em`,
+              width: "190em",
+            }}
+          >
             <ScrollHorizontal>{exampleItems}</ScrollHorizontal>
           </div>
         </div>

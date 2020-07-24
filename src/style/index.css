@@ -63,13 +63,13 @@ footer p {
   align-items: center;
 }
 .tile-striped {
-  background: repeating-linear-gradient(
+  /* background: repeating-linear-gradient(
     45deg,
     purple,
     violet 10px,
     purple 10px,
     violet 20px
-  );
+  ); */
 }
 .tile:nth-child(odd) {
   background-color: purple;
