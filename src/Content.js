@@ -8,26 +8,7 @@ import anime from "animejs";
 import Card from "./Card";
 import "./style/Content.css";
 
-const useStyles = makeStyles({
-  opa: {
-    opacity: "0",
-  },
-  in: {
-    opacity: "1",
-    position: "absolute",
-    transition: "all 0.4s ease-out",
-    transform: "translate(1em, 0)",
-  },
-  out: {
-    opacity: "0",
-    transition: "all 0.4s ease-out",
-    transform: "translate(0,0.3em)",
-  },
-  basic: {
-    cursor: "pointer",
-    margin: "10px",
-  },
-});
+const useStyles = makeStyles({});
 
 export default () => {
   const animateRef = useRef();
@@ -36,7 +17,11 @@ export default () => {
   const classes = useStyles();
 
   const content = {
-    Home: "Hi, Im falah from from la",
+    Home: {
+      line1: "Hi, I'm Falah",
+      line2: "I'm Falah",
+      line3: "A Web Developer",
+    },
     "About Me": { title: "inititle", desc: "inidesc" },
   };
 
@@ -53,31 +38,35 @@ export default () => {
 
     anime.timeline({ loop: false }).add({
       targets: ".ml10 .letter",
-      scale: [0, 1],
-      duration: 1500,
-      elasticity: 600,
-      delay: (el, i) => 45 * (i + 1),
+      rotateY: [-90, 0],
+      duration: 4800,
+      delay: (el, i) => 45 * i,
     });
   }, []);
 
   return (
     <div className="content">
-      <div>{nav}</div>
+      {/* <div>{nav}</div> */}
       {nav == "Home" && (
         <div>
           <h1
             style={{
+              top: "100px",
+              left: "67px",
+              fontSize: "30px",
               cursor: "normal",
-              color: "rgba(0,0,0,0.4)",
-              fontFamily: "Fira Sans",
+              color: "rgba(81, 81, 81, 0.94)",
+              fontFamily: "Recursive",
             }}
-            className="font-anime"
             ref={animateRef}
             className="ml10"
           >
-            <span className="text-wrapper">
+            <span
+              style={{ display: "block", marginBottom: "10px" }}
+              className="text-wrapper"
+            >
               <span ref={letterRef} className="letters">
-                PANJANG SEKALi
+                {content["Home"]["line1"]}
               </span>
             </span>
           </h1>

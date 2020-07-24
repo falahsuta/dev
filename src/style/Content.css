@@ -2,7 +2,7 @@
   height: 450px;
   width: 530px;
   border-radius: 15px;
-  border: solid 1px lightgrey;
+  /* border: solid 1px lightgrey; */
 }
 
 .project-enter {
@@ -70,6 +70,8 @@
   position: relative;
   font-weight: 900;
   font-size: 4em;
+  cursor: default;
+  -webkit-user-select: none;
 }
 
 .ml10 .text-wrapper {
@@ -88,6 +90,12 @@
 }
 
 .font-anime {
+  font-family: "Recursive", sans-serif;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 600;
+  font-size: 14px;
   font-style: normal;
   font-variant-ligatures: normal;
   font-variant-caps: normal;

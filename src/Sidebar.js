@@ -5,51 +5,19 @@ import "./style/Sidebar.css";
 import { useDispatch } from "react-redux";
 import { selectNav } from "./actions";
 
-const useStyles = makeStyles({
-  movingSlider: (props) => ({
-    position: "absolute",
-    top: props.Top,
-    left: props.Left,
-    width: "140px",
-    height: "40px",
-    borderRadius: "5px",
-    backgroundColor: "#eeeeee",
-    opacity: "0.3",
-    transition: "all 0.4s ease-in-out",
-    transform: `translate(0, ${props.translate}%)`,
-  }),
-});
+const useStyles = makeStyles({});
 
 export default () => {
   const dispatch = useDispatch();
 
   const [onSelect, setOnSelect] = useState("Home");
   const [onMenu, setOnMenu] = useState("");
-  const [isShown, setIsShown] = useState(false);
-  const [change, setChange] = useState(false);
   const [icon, setIcon] = useState(false);
-  const [curridx, setCurridx] = useState(0);
-  const [Top, setTop] = useState(0);
-  const [Left, setLeft] = useState(0);
-  const [translate, setTranslate] = useState(0);
 
-  const props = { Top, Left, translate };
-  const classes = useStyles(props);
-
-  const posref = {
-    0: useRef(),
-    1: useRef(),
-    2: useRef(),
-    3: useRef(),
-  };
-
-  useEffect(() => {
-    setTop(posref[0].current.offsetTop);
-    setLeft(posref[0].current.offsetLeft);
-  }, []);
-
+  // const props = { Top, Left, translate };
+  const classes = useStyles();
   const logo = [
-    "ri-apps-line",
+    "ri-menu-3-line",
     "ri-code-s-slash-line",
     "ri-rhythm-fill",
     "ri-account-circle-line",
@@ -59,11 +27,9 @@ export default () => {
     (menu, index) => {
       return (
         <div
-          ref={posref[index]}
           key={menu}
           className={`card ${menu === onSelect && "selected-card"}`}
           onMouseEnter={() => {
-            setIsShown(true);
             setOnMenu(menu);
           }}
           onMouseLeave={() => {
@@ -71,15 +37,10 @@ export default () => {
           }}
           onClick={() => {
             if (onMenu !== onSelect) {
-              setChange(true);
               setTimeout(() => {
                 setIcon(true);
               }, 200);
-
-              setCurridx(index);
-              setTranslate((index - curridx) * 120);
               setOnSelect("");
-
               setTimeout(() => {
                 setIcon(false);
               }, 900);
@@ -87,10 +48,6 @@ export default () => {
               setTimeout(() => {
                 setOnSelect(menu);
                 dispatch(selectNav(menu));
-
-                setLeft(posref[index].current.offsetLeft);
-                setTop(posref[index].current.offsetTop);
-                setChange(false);
               }, 500);
             }
           }}
@@ -104,10 +61,11 @@ export default () => {
           </span>
           <span
             style={{
-              color: "rgba(70, 70, 70, 0.878)",
-              marginRight: "17px",
+              color: "rgba(70, 70, 70, 0.978)",
+              cursor: "pointer",
+              marginRight: "21px",
               marginTop: `${onSelect === "About Me" ? "1px" : "5px"}`,
-              fontSize: "13px",
+              fontSize: "15px",
               transition: "all 0.1s ease-in-out",
               opacity: "0.8",
             }}
@@ -122,7 +80,6 @@ export default () => {
   return (
     <div>
       <div className="container-card">{menus}</div>
-      <div className={change ? classes.movingSlider : ""}></div>
     </div>
   );
 };

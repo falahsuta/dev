@@ -42,9 +42,9 @@ export default () => {
           className={show ? classes.in : ""}
         >
           <div className="header">
-            <i className={`ri-terminal-box-fill ${classes.icon}`}></i>
+            {/* <i className={`ri-terminal-box-fill ${classes.icon}`}></i> */}
             <span>
-              Test-Test<span className="blink">_</span>
+              {/* Falah-Sutawindaya<span className="blink">_</span> */}
             </span>
           </div>
         </div>
