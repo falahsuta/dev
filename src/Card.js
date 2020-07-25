@@ -3,6 +3,9 @@ import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles({
   root: {
+    marginTop: "100px",
+    // position: "absolute",
+    top: "70px",
     height: "200px",
     width: "240px",
     borderRadius: "15px",

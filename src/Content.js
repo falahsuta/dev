@@ -3,75 +3,92 @@ import { makeStyles } from "@material-ui/styles";
 import { CSSTransition } from "react-transition-group";
 import ScrollHorizontal from "react-scroll-horizontal";
 import { useSelector } from "react-redux";
+import content from "./dynamic-content";
 import anime from "animejs";
 
 import Card from "./Card";
 import "./style/Content.css";
 
-const useStyles = makeStyles({});
+const useStyles = makeStyles({
+  header: {
+    top: "120px",
+    left: "67px",
+    fontSize: "30px",
+    cursor: "normal",
+    color: "rgba(81, 81, 81, 0.94)",
+    fontFamily: "Recursive",
+  },
+});
 
 export default () => {
-  const animateRef = useRef();
-  const letterRef = useRef();
   const nav = useSelector((state) => state.nav);
   const classes = useStyles();
 
-  const content = {
-    Home: {
-      line1: "Hi, I'm Falah",
-      line2: "I'm Falah",
-      line3: "A Web Developer",
-    },
-    "About Me": { title: "inititle", desc: "inidesc" },
-  };
+  const letterRef = useRef();
+  const letterRefL2 = useRef();
+  const letterRefL3 = useRef();
 
   const link =
     "https://scontent-ort2-1.cdninstagram.com/v/t51.2885-19/66783490_416730902531381_5845601586805473280_n.jpg?_nc_ht=scontent-ort2-1.cdninstagram.com&_nc_ohc=6fy60-UU2IwAX9X0dLI&oh=72f43fda338b81d0d9f00103828ee541&oe=5F42A558";
 
-  // console.log(anime.timeline());
-
   useEffect(() => {
-    letterRef.current.innerHTML = letterRef.current.textContent.replace(
-      /\S/g,
-      "<span class='letter'>$&</span>"
-    );
+    if (nav === "Home") {
+      letterRef.current.innerHTML = letterRef.current.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>"
+      );
 
-    anime.timeline({ loop: false }).add({
-      targets: ".ml10 .letter",
-      rotateY: [-90, 0],
-      duration: 4800,
-      delay: (el, i) => 45 * i,
-    });
-  }, []);
+      letterRefL2.current.innerHTML = letterRefL2.current.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>"
+      );
+
+      letterRefL3.current.innerHTML = letterRefL3.current.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>"
+      );
+
+      anime({
+        targets: ".letter",
+        rotateY: [-90, 0],
+        duration: 4800,
+        delay: (el, i) => 45 * i,
+      });
+    }
+  }, [nav]);
 
   return (
     <div className="content">
-      {/* <div>{nav}</div> */}
-      {nav == "Home" && (
+      {/* <CSSTransition
+        in={nav === "Home"}
+        timeout={4300}
+        classNames="alert"
+        unmountOnExit
+      >
+        <p style={{ fontSize: "12px", opacity: "0.7" }}>Hai</p>
+      </CSSTransition> */}
+
+      {nav === "Home" && (
         <div>
-          <h1
-            style={{
-              top: "100px",
-              left: "67px",
-              fontSize: "30px",
-              cursor: "normal",
-              color: "rgba(81, 81, 81, 0.94)",
-              fontFamily: "Recursive",
-            }}
-            ref={animateRef}
-            className="ml10"
-          >
+          <h1 className={`ml10 ${classes.header}`}>
             <span
-              style={{ display: "block", marginBottom: "10px" }}
-              className="text-wrapper"
+              style={{ marginBottom: "10px" }}
+              className="text-wrapper letters"
             >
-              <span ref={letterRef} className="letters">
+              <span style={{ display: "block" }} ref={letterRef}>
                 {content["Home"]["line1"]}
+              </span>
+              <span style={{ display: "block" }} ref={letterRefL2}>
+                {content["Home"]["line2"]}
+              </span>
+              <span style={{ display: "block" }} ref={letterRefL3}>
+                {content["Home"]["line3"]}
               </span>
             </span>
           </h1>
         </div>
       )}
+
       <CSSTransition
         in={nav === "Projects"}
         timeout={4300}
