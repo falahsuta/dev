@@ -8,11 +8,11 @@ const useStyles = makeStyles({
     top: "70px",
     height: "200px",
     width: "240px",
-    borderRadius: "15px",
-    marginBottom: "20px",
+    borderRadius: "10px",
+    marginBottom: "220px",
     border: "solid 1px lightgrey",
-    marginLeft: "30px",
-    marginRight: "30px",
+    marginLeft: "15px",
+    marginRight: "15px",
   },
 });
 

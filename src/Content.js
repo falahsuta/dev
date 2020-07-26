@@ -11,8 +11,8 @@ import "./style/Content.css";
 
 const useStyles = makeStyles({
   header: {
-    top: "120px",
-    left: "67px",
+    top: "160px",
+    left: "40px",
     fontSize: "30px",
     cursor: "normal",
     color: "rgba(81, 81, 81, 0.94)",
@@ -21,54 +21,84 @@ const useStyles = makeStyles({
 });
 
 export default () => {
+  const [home, setHome] = useState(false);
   const nav = useSelector((state) => state.nav);
   const classes = useStyles();
 
   const letterRef = useRef();
   const letterRefL2 = useRef();
   const letterRefL3 = useRef();
+  const smallText = useRef();
 
   const link =
     "https://scontent-ort2-1.cdninstagram.com/v/t51.2885-19/66783490_416730902531381_5845601586805473280_n.jpg?_nc_ht=scontent-ort2-1.cdninstagram.com&_nc_ohc=6fy60-UU2IwAX9X0dLI&oh=72f43fda338b81d0d9f00103828ee541&oe=5F42A558";
 
   useEffect(() => {
     if (nav === "Home") {
-      letterRef.current.innerHTML = letterRef.current.textContent.replace(
-        /\S/g,
-        "<span class='letter'>$&</span>"
-      );
+      setTimeout(() => {
+        setHome(true);
+        letterRef.current.innerHTML = letterRef.current.textContent.replace(
+          /\S/g,
+          "<span class='letter'>$&</span>"
+        );
 
-      letterRefL2.current.innerHTML = letterRefL2.current.textContent.replace(
-        /\S/g,
-        "<span class='letter'>$&</span>"
-      );
+        letterRefL2.current.innerHTML = letterRefL2.current.textContent.replace(
+          /\S/g,
+          "<span class='letter'>$&</span>"
+        );
 
-      letterRefL3.current.innerHTML = letterRefL3.current.textContent.replace(
-        /\S/g,
-        "<span class='letter'>$&</span>"
-      );
+        letterRefL3.current.innerHTML = letterRefL3.current.textContent.replace(
+          /\S/g,
+          "<span class='letter'>$&</span>"
+        );
 
-      anime({
-        targets: ".letter",
-        rotateY: [-90, 0],
-        duration: 4800,
-        delay: (el, i) => 45 * i,
-      });
+        smallText.current.innerHTML = smallText.current.textContent.replace(
+          /\S/g,
+          "<span class='lettera'>$&</span>"
+        );
+
+        anime({
+          targets: ".letter",
+          rotateY: [-90, 0],
+          duration: 4800,
+          delay: (el, i) => 45 * i,
+        });
+
+        anime({
+          targets: ".ml12 .lettera",
+          opacity: [0, 1],
+          easing: "easeInOutQuad",
+          duration: 2250,
+          delay: (el, i) => 10 * (i + 1),
+        });
+      }, 300);
+    }
+    if (nav !== "Home") {
+      setHome(false);
     }
   }, [nav]);
 
   return (
     <div className="content">
-      {/* <CSSTransition
-        in={nav === "Home"}
-        timeout={4300}
-        classNames="alert"
-        unmountOnExit
-      >
-        <p style={{ fontSize: "12px", opacity: "0.7" }}>Hai</p>
+      {/* <CSSTransition in={home} timeout={100} classNames="project" unmountOnExit>
+        <div>
+          <div
+            style={{
+              border: "solid 1px lightgrey",
+              height: "300px",
+              margin: "0",
+              top: "215px",
+              position: "absolute",
+              width: "540px",
+            }}
+            className="background-home"
+          >
+            Welcome
+          </div>
+        </div>
       </CSSTransition> */}
 
-      {nav === "Home" && (
+      {home && (
         <div>
           <h1 className={`ml10 ${classes.header}`}>
             <span
@@ -89,8 +119,23 @@ export default () => {
         </div>
       )}
 
+      {home && (
+        <p
+          className={`${classes.header} ml12`}
+          style={{
+            fontSize: "12px",
+            marginTop: "145px",
+            marginLeft: "41px",
+            opacity: "0.6",
+          }}
+          ref={smallText}
+        >
+          Passionate in Front-End Dev / Webdev in general
+        </p>
+      )}
+
       <CSSTransition
-        in={nav === "Projects"}
+        in={nav === "a"}
         timeout={4300}
         classNames="project"
         unmountOnExit
@@ -100,7 +145,7 @@ export default () => {
         </div>
       </CSSTransition>
       <CSSTransition
-        in={nav === "Projects"}
+        in={nav === "a"}
         timeout={4300}
         classNames="title"
         unmountOnExit
@@ -119,7 +164,7 @@ export default () => {
       )}
 
       <CSSTransition
-        in={nav === "Contact"}
+        in={nav === "Projects"}
         timeout={4300}
         classNames="alert"
         unmountOnExit
@@ -143,7 +188,7 @@ export default () => {
           >
             <ScrollHorizontal>
               <Card />
-              <Card />
+              <Card style={{ position: "absolute", marginTop: "10px" }} />
               <Card />
               {/* <Card /> */}
               {/* <Card /> */}

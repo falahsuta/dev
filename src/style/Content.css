@@ -91,7 +91,6 @@
 
 .font-anime {
   font-family: "Recursive", sans-serif;
-  font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -102,4 +101,34 @@
   font-variant-numeric: normal;
   font-variant-east-asian: normal;
   font-stretch: normal;
+}
+
+.standard-enter {
+  opacity: 0;
+  transform: translateY(1.9em);
+}
+.standard-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 1300ms, transform 1300ms;
+}
+.standard-exit {
+  opacity: 1;
+}
+.standard-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.ml12 {
+  /* font-weight: 200; */
+  /* font-size: 1.8em; */
+  /* text-transform: uppercase;  */
+  /* letter-spacing: 0.5em; */
+}
+
+.ml12 .letter {
+  display: inline-block;
+  line-height: 1em;
 }

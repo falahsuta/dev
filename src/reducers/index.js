@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-const selectedNavReducer = (selectedNav = "Home", action) => {
+const selectedNavReducer = (selectedNav = null, action) => {
   if (action.type === "NAV_SELECTED") {
     return action.payload;
   }

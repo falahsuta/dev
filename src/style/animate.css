@@ -1,0 +1,23 @@
+.move {
+  /* transition: all 0.4s ease-in-out; */
+  transform: translate(-1em, 0);
+}
+
+.alert-enter {
+  opacity: 0;
+  transform: scale(1);
+  /* transform: translateY(-1.1em); */
+}
+.alert-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 50ms, transform 50ms;
+}
+.alert-exit {
+  opacity: 1;
+}
+.alert-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
