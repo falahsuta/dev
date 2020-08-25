@@ -5,7 +5,7 @@ import { selectNav } from "./actions";
 import BlogCardDemo from "./BlogCardDemo";
 import IconTest from "./IconTest";
 import { Icon } from "@material-ui/core";
-
+import Acon from "./Acon";
 // import TestScroll from "./TestScroll";
 
 const App = () => {
@@ -17,8 +17,9 @@ const App = () => {
 
   return (
     <div>
+      <Acon />
       {/* <TestScroll /> */}
-      <Canvas />
+      {/* <Canvas /> */}
       {/* <IconTest /> */}
       {/* <Animate /> */}
       {/* <br />

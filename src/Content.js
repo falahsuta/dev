@@ -32,6 +32,10 @@ export default () => {
   const letterRefL3 = useRef();
   const smallText = useRef();
 
+  const spacing = (num) => {
+    return <div style={{ marginTop: "3px", width: "30px", height: num }}></div>;
+  };
+
   const link =
     "https://scontent-ort2-1.cdninstagram.com/v/t51.2885-19/66783490_416730902531381_5845601586805473280_n.jpg?_nc_ht=scontent-ort2-1.cdninstagram.com&_nc_ohc=6fy60-UU2IwAX9X0dLI&oh=72f43fda338b81d0d9f00103828ee541&oe=5F42A558";
 
@@ -84,6 +88,8 @@ export default () => {
     <div className="content">
       {home && (
         <div>
+          <br />
+          <br />
           <h1 className={`ml10 ${classes.header}`}>
             <span
               style={{ marginBottom: "10px" }}
@@ -118,6 +124,7 @@ export default () => {
         </p>
       )}
 
+      {/* {spacing(1)} */}
       <CSSTransition
         in={nav === "Projects"}
         timeout={4300}
@@ -165,7 +172,7 @@ export default () => {
           )}
         </div>
       </CSSTransition>
-
+      {/* <br /> */}
       {nav && (
         <CSSTransition
           in={nav === "About Me"}
@@ -188,6 +195,7 @@ export default () => {
             <div style={{ lineHeight: 1.6 }}>
               {content[nav] ? content[nav].desc : ""}
             </div>
+            {/* <h2>Skills</h2> */}
           </div>
         </CSSTransition>
       )}
