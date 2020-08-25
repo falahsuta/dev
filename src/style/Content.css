@@ -50,7 +50,7 @@
 
 .alert-enter {
   opacity: 0;
-  transform: translateY(-1em);
+  transform: translateY(1em);
 }
 .alert-enter-active {
   opacity: 1;
@@ -62,7 +62,7 @@
 }
 .alert-exit-active {
   opacity: 0;
-  transform: translateY(1em);
+  transform: translateY(-1em);
   transition: opacity 300ms, transform 300ms;
 }
 

@@ -18,7 +18,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     boxShadow: "0px 3px 15px rgba(0,0,0,0.2)",
     position: "relative",
     // maxWidth: 400,
-    width: 400,
+    width: 320,
     // height: "40%",
     marginLeft: "auto",
     overflow: "initial",
@@ -27,10 +27,10 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    paddingBottom: spacing(2),
+    // paddingBottom: spacing(1),
     [breakpoints.up("md")]: {
       flexDirection: "row",
-      paddingTop: spacing(2),
+      // paddingTop: spacing(1),
     },
   },
   media: {
@@ -39,7 +39,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     marginRight: "auto",
     marginTop: spacing(-3),
     height: 0,
-    paddingBottom: "48%",
+    paddingBottom: "42%",
     borderRadius: spacing(2),
 
     backgroundColor: "#fff",
@@ -80,7 +80,7 @@ export const BlogCardDemo = React.memo(function BlogCard() {
   } = useBlogTextInfoContentStyles();
   const shadowStyles = useOverShadowStyles();
   return (
-    <Paper elevation={0} className={cx(styles.root)}>
+    <Paper elevation={0} className={cx(styles.root, shadowStyles.root)}>
       <CardMedia
         className={styles.media}
         image={
@@ -96,8 +96,8 @@ export const BlogCardDemo = React.memo(function BlogCard() {
             "Git is a distributed version control system. Every dev has a working copy of the code and..."
           }
         />
-        <br />
-        <br />
+        {/* <br /> */}
+        {/* <br /> */}
         <Button className={buttonStyles}>Documentation</Button>
       </CardContent>
     </Paper>

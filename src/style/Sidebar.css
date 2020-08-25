@@ -21,7 +21,7 @@
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
-  width: 125px;
+  width: 120px;
   height: 45px;
   border-radius: 5px;
   align-items: center;
@@ -30,7 +30,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
   /* margin-top: 2px; */
   /* margin-bottom: 2px; */
   margin-left: 90px;
@@ -40,7 +40,7 @@
 }
 
 .card span {
-  margin-right: 17px;
+  margin-right: 14px;
   color: #5c5c5c;
   -webkit-user-select: none;
   cursor: pointer;
@@ -57,7 +57,7 @@
 }
 
 .selected-card span {
-  margin-right: 46px;
+  margin-right: 33px;
 }
 
 .card-text {
@@ -72,9 +72,31 @@
 .moving-left {
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
-  transform: translate(-1.2em, 0);
+  transform: translate(-1em, 0);
   -webkit-transform: translate(-1.2em, 0);
   -moz-transform: translate(-1.2em, 0);
   -o-transform: translate(-1.2em, 0);
   -ms-transform: translate(-1.2em, 0);
+}
+
+.first-enter {
+  opacity: 0;
+  transform: translateY(-1.2em);
+}
+.first-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 1000ms, transform 1000ms;
+}
+.first-exit {
+  opacity: 1;
+}
+.first-exit-active {
+  opacity: 0;
+  transform: translateY(1.2em);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.blink {
+  animation: blinker 0.7s step-start infinite;
 }

@@ -135,30 +135,29 @@ export default () => {
           }
         >
           {nav === "Projects" && (
-            <div
-              style={{
-                height: `22.7em`,
-                width: "530px",
-                marginTop: "190px",
-                borderRadius: "20px",
-              }}
-            >
-              <ScrollHorizontal>
-                {/* <Card /> */}
-                {/* <Card /> */}
-                {/* <Card /> */}
-                <div style={{ margin: "20px 55px" }}>
-                  <BlogCardDemo />
-                </div>
-                <div style={{ margin: "20px 55px" }}>
-                  <BlogCardDemo />
-                </div>
+            <>
+              <div
+                style={{
+                  height: `22.7em`,
+                  width: "530px",
+                  marginTop: "190px",
+                  borderRadius: "20px",
+                }}
+              >
+                <ScrollHorizontal>
+                  <div style={{ margin: "50px 45px" }}>
+                    <BlogCardDemo />
+                  </div>
+                  <div style={{ margin: "100px 45px" }}>
+                    <BlogCardDemo />
+                  </div>
 
-                <div style={{ margin: "20px 55px" }}>
-                  <BlogCardDemo />
-                </div>
-              </ScrollHorizontal>
-            </div>
+                  <div style={{ margin: "50px 45px" }}>
+                    <BlogCardDemo />
+                  </div>
+                </ScrollHorizontal>
+              </div>
+            </>
           )}
         </div>
       </CSSTransition>

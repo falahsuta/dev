@@ -21,8 +21,8 @@ const App = () => {
       {/* <br />
       <br />
       <br />
-      <br />
-      <BlogCardDemo /> */}
+      <br /> */}
+      {/* <BlogCardDemo /> */}
     </div>
   );
 };
