@@ -9,6 +9,7 @@ import anime from "animejs";
 import Card from "./Card";
 import BlogCardDemo from "./BlogCardDemo";
 import "./style/Content.css";
+import IconTest from "./IconTest";
 
 const useStyles = makeStyles({
   header: {
@@ -156,6 +157,9 @@ export default () => {
                     <BlogCardDemo />
                   </div>
                 </ScrollHorizontal>
+                <div style={{ marginLeft: "220px" }}>
+                  <IconTest />
+                </div>
               </div>
             </>
           )}

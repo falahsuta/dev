@@ -11,7 +11,6 @@ export default () => {
     <>
       <div className="container">
         <div className="center-side">
-          <Header />
           <Content />
         </div>
         <div className="right-side">

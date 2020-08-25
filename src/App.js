@@ -3,6 +3,8 @@ import Canvas from "./Canvas";
 import { useDispatch } from "react-redux";
 import { selectNav } from "./actions";
 import BlogCardDemo from "./BlogCardDemo";
+import IconTest from "./IconTest";
+import { Icon } from "@material-ui/core";
 
 // import TestScroll from "./TestScroll";
 
@@ -17,6 +19,7 @@ const App = () => {
     <div>
       {/* <TestScroll /> */}
       <Canvas />
+      {/* <IconTest /> */}
       {/* <Animate /> */}
       {/* <br />
       <br />
