@@ -28,10 +28,6 @@ export default () => {
     setTimeout(() => {
       setShow(true);
     }, 400);
-
-    // setTimeout(() => {
-    //   setOut(true);
-    // }, 1900);
   }, []);
 
   return (
@@ -42,19 +38,10 @@ export default () => {
           className={show ? classes.in : ""}
         >
           <div className="header">
-            {/* <i className={`ri-terminal-box-fill ${classes.icon}`}></i> */}
-            <span>
-              {/* Falah-Sutawindaya<span className="blink">_</span> */}
-            </span>
+            <span></span>
           </div>
         </div>
       </div>
     </div>
   );
 };
-
-// const content = {
-//   "Home": {
-//     "title": ""
-//   }
-// }

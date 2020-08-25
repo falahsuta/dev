@@ -66,6 +66,24 @@
   transition: opacity 300ms, transform 300ms;
 }
 
+.abouts-enter {
+  opacity: 0;
+  transform: translateY(-1em);
+}
+.abouts-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 1300ms, transform 1300ms;
+}
+.abouts-exit {
+  opacity: 1;
+}
+.abouts-exit-active {
+  opacity: 0;
+  transform: translateY(1em);
+  transition: opacity 300ms, transform 300ms;
+}
+
 .ml10 {
   position: relative;
   font-weight: 900;

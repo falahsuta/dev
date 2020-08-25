@@ -7,6 +7,7 @@ import content from "./dynamic-content";
 import anime from "animejs";
 
 import Card from "./Card";
+import BlogCardDemo from "./BlogCardDemo";
 import "./style/Content.css";
 
 const useStyles = makeStyles({
@@ -80,24 +81,6 @@ export default () => {
 
   return (
     <div className="content">
-      {/* <CSSTransition in={home} timeout={100} classNames="project" unmountOnExit>
-        <div>
-          <div
-            style={{
-              border: "solid 1px lightgrey",
-              height: "300px",
-              margin: "0",
-              top: "215px",
-              position: "absolute",
-              width: "540px",
-            }}
-            className="background-home"
-          >
-            Welcome
-          </div>
-        </div>
-      </CSSTransition> */}
-
       {home && (
         <div>
           <h1 className={`ml10 ${classes.header}`}>
@@ -135,35 +118,6 @@ export default () => {
       )}
 
       <CSSTransition
-        in={nav === "a"}
-        timeout={4300}
-        classNames="project"
-        unmountOnExit
-      >
-        <div>
-          <img style={{ width: "30%", borderRadius: "10px" }} src={link} />
-        </div>
-      </CSSTransition>
-      <CSSTransition
-        in={nav === "a"}
-        timeout={4300}
-        classNames="title"
-        unmountOnExit
-      >
-        <div>
-          <h1>ANIMATE THIS </h1>
-        </div>
-      </CSSTransition>
-
-      {nav == "About Me" && (
-        <div>
-          <h2>{content[nav].title}</h2>
-          <div>{content[nav].desc}</div>
-          <Card />
-        </div>
-      )}
-
-      <CSSTransition
         in={nav === "Projects"}
         timeout={4300}
         classNames="alert"
@@ -180,22 +134,60 @@ export default () => {
             }
           }
         >
-          <div
-            style={{
-              height: `22.7em`,
-              width: "530px",
-            }}
-          >
-            <ScrollHorizontal>
-              <Card />
-              <Card style={{ position: "absolute", marginTop: "10px" }} />
-              <Card />
-              {/* <Card /> */}
-              {/* <Card /> */}
-            </ScrollHorizontal>
-          </div>
+          {nav === "Projects" && (
+            <div
+              style={{
+                height: `22.7em`,
+                width: "530px",
+                marginTop: "190px",
+                borderRadius: "20px",
+              }}
+            >
+              <ScrollHorizontal>
+                {/* <Card /> */}
+                {/* <Card /> */}
+                {/* <Card /> */}
+                <div style={{ margin: "20px 55px" }}>
+                  <BlogCardDemo />
+                </div>
+                <div style={{ margin: "20px 55px" }}>
+                  <BlogCardDemo />
+                </div>
+
+                <div style={{ margin: "20px 55px" }}>
+                  <BlogCardDemo />
+                </div>
+              </ScrollHorizontal>
+            </div>
+          )}
         </div>
       </CSSTransition>
+
+      {nav && (
+        <CSSTransition
+          in={nav === "About Me"}
+          timeout={4300}
+          classNames="abouts"
+          unmountOnExit
+        >
+          <div
+            style={{
+              fontFamily: "Recursive",
+              position: "absolute",
+              marginTop: "140px",
+              marginLeft: "20px",
+              color: "rgba(61, 61, 61, 0.92)",
+              width: "510px",
+              height: "900px",
+            }}
+          >
+            <h2>{content[nav] ? content[nav].title : ""}</h2>
+            <div style={{ lineHeight: 1.6 }}>
+              {content[nav] ? content[nav].desc : ""}
+            </div>
+          </div>
+        </CSSTransition>
+      )}
     </div>
   );
 };
