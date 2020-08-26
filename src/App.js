@@ -4,9 +4,7 @@ import { useDispatch } from "react-redux";
 import { selectNav } from "./actions";
 import BlogCardDemo from "./BlogCardDemo";
 import IconTest from "./IconTest";
-import { Icon } from "@material-ui/core";
-import Acon from "./Acon";
-// import TestScroll from "./TestScroll";
+import GridOfLogo from "./GridOfLogo";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -16,18 +14,9 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <Acon />
-      {/* <TestScroll /> */}
-      {/* <Canvas /> */}
-      {/* <IconTest /> */}
-      {/* <Animate /> */}
-      {/* <br />
-      <br />
-      <br />
-      <br /> */}
-      {/* <BlogCardDemo /> */}
-    </div>
+    <>
+      <Canvas />
+    </>
   );
 };
 

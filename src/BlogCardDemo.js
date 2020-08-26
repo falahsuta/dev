@@ -80,27 +80,29 @@ export const BlogCardDemo = React.memo(function BlogCard() {
   } = useBlogTextInfoContentStyles();
   const shadowStyles = useOverShadowStyles();
   return (
-    <Paper elevation={0} className={cx(styles.root, shadowStyles.root)}>
-      <CardMedia
-        className={styles.media}
-        image={
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2000px-Git_icon.svg.png"
-        }
-      />
-      <CardContent>
-        <TextInfoContent
-          classes={contentStyles}
-          // overline={"28 MAR 2019"}
-          heading={"What is Git ?"}
-          body={
-            "Git is a distributed version control system. Every dev has a working copy of the code and..."
+    <div style={{ userSelect: "none" }}>
+      <Paper elevation={0} className={cx(styles.root, shadowStyles.root)}>
+        <CardMedia
+          className={styles.media}
+          image={
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2000px-Git_icon.svg.png"
           }
         />
-        {/* <br /> */}
-        {/* <br /> */}
-        <Button className={buttonStyles}>Documentation</Button>
-      </CardContent>
-    </Paper>
+        <CardContent>
+          <TextInfoContent
+            classes={contentStyles}
+            // overline={"28 MAR 2019"}
+            heading={"DissCuss"}
+            // style={{ userSelect: "none" }}
+            body={"Reddit wannabe but with some preferences style of mine."}
+          />
+
+          {/* <br /> */}
+          {/* <br /> */}
+          <Button className={buttonStyles}>Documentation</Button>
+        </CardContent>
+      </Paper>
+    </div>
   );
 });
 

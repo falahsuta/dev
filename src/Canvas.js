@@ -3,6 +3,7 @@ import Sidebar from "./Sidebar";
 import Current from "./Current";
 import Content from "./Content";
 import Header from "./Header";
+import GridOfLogo from "./GridOfLogo";
 
 import "./style/Canvas.css";
 

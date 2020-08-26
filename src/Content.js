@@ -10,6 +10,7 @@ import Card from "./Card";
 import BlogCardDemo from "./BlogCardDemo";
 import "./style/Content.css";
 import IconTest from "./IconTest";
+import GridOfLogo from "./GridOfLogo";
 
 const useStyles = makeStyles({
   header: {
@@ -186,16 +187,26 @@ export default () => {
               position: "absolute",
               marginTop: "140px",
               marginLeft: "20px",
-              color: "rgba(61, 61, 61, 0.92)",
+
               width: "510px",
               height: "900px",
+              userSelect: "none",
             }}
           >
-            <h2>{content[nav] ? content[nav].title : ""}</h2>
-            <div style={{ lineHeight: 1.6 }}>
+            {spacing(20)}
+            <h2 style={{ color: "rgba(61, 61, 61, 0.82)" }}>
+              {content[nav] ? content[nav].title : ""}
+            </h2>
+            <div style={{ lineHeight: 1.6, color: "rgba(61, 61, 61, 0.72)" }}>
               {content[nav] ? content[nav].desc : ""}
             </div>
-            {/* <h2>Skills</h2> */}
+            {/* <h3 style={{ color: "rgba(61, 61, 61, 0.72)" }}>Contacts</h3> */}
+            {/* <div
+              style={{ width: "330px", marginTop: "20px", marginLeft: "85px" }}
+            >
+              
+            </div> */}
+            <GridOfLogo />
           </div>
         </CSSTransition>
       )}
