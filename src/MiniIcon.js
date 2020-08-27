@@ -9,15 +9,11 @@ export default (props) => {
       <div
         className="vert-move1"
         style={{
-          // border: "2px solid red",
           color: isShown ? "rgba(61, 61, 61, 0.82)" : "rgba(61, 61, 61, 0.52)",
           userSelect: "none",
           width: "70px",
           height: "20px",
           marginTop: "20px",
-
-          // transform: isShown ? "translateY(-0.11em)" : undefined,
-          // display: "inline-block",
           marginLeft: props.text === "Linkedin" ? "-5px" : undefined,
         }}
         onMouseEnter={() => setIsShown(true)}
@@ -30,7 +26,6 @@ export default (props) => {
             display: "inline-block",
           }}
         >
-          {/* <div style={{ marginTop: "30px" }}> */}
           <div>
             <i
               style={{
@@ -44,8 +39,6 @@ export default (props) => {
                   : `ri-${props.text.toLowerCase()}-line`
               }
             ></i>
-
-            {/* <i style={{ display: "block" }} class="ri-arrow-drop-up-line"></i> */}
           </div>
         </div>
         <span

@@ -1,19 +1,19 @@
 import React from "react";
 import { Icon, Grid } from "@material-ui/core";
-import Acon from "./Acon";
+import MiniIcon from "./MiniIcon";
 
 export default () => {
   return (
     <div style={{ width: "330px", marginLeft: "110px", marginTop: "150px" }}>
       <Grid container direction="row" justify="center" alignItems="center">
         <Grid items xs>
-          <Acon text="Github" />
+          <MiniIcon text="Github" />
         </Grid>
         <Grid items xs>
-          <Acon text="Linkedin" />
+          <MiniIcon text="Linkedin" />
         </Grid>
         <Grid items xs>
-          <Acon text="Instagram" />
+          <MiniIcon text="Instagram" />
         </Grid>
       </Grid>
     </div>

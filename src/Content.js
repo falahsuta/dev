@@ -9,7 +9,7 @@ import anime from "animejs";
 import Card from "./Card";
 import BlogCardDemo from "./BlogCardDemo";
 import "./style/Content.css";
-import IconTest from "./IconTest";
+import ScrollUp from "./ScrollUp";
 import GridOfLogo from "./GridOfLogo";
 
 const useStyles = makeStyles({
@@ -170,7 +170,7 @@ export default () => {
                     </div>
                   </ScrollHorizontal>
                   <div style={{ marginLeft: "220px" }}>
-                    <IconTest />
+                    <ScrollUp />
                   </div>
                 </div>
               </>

@@ -13,24 +13,19 @@ import Paper from "@material-ui/core/Paper";
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   root: {
     margin: "auto",
-    borderRadius: spacing(2), // 16px
+    borderRadius: spacing(2),
     transition: "0.3s",
     boxShadow: "0px 3px 15px rgba(0,0,0,0.2)",
     position: "relative",
-    // maxWidth: 400,
-    width: 320,
-    // height: "40%",
     marginLeft: "auto",
     overflow: "initial",
-    // background: "lightgrey",
     background: "rgba(249, 249, 249, 0.9)",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    // paddingBottom: spacing(1),
+    width: 320,
     [breakpoints.up("md")]: {
       flexDirection: "row",
-      // paddingTop: spacing(1),
     },
   },
   media: {
@@ -41,12 +36,10 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     height: 0,
     paddingBottom: "42%",
     borderRadius: spacing(2),
-
     backgroundColor: "#fff",
     position: "relative",
     [breakpoints.up("md")]: {
       width: "100%",
-      // height: "40%",
       marginLeft: spacing(-3),
       marginTop: 0,
       transform: "translateX(-8px)",
@@ -59,7 +52,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
       width: "100%",
       height: "100%",
       backgroundImage: "linear-gradient(147deg, #fe8a39 0%, #fd3838 74%)",
-      borderRadius: spacing(2), // 16
+      borderRadius: spacing(2),
       opacity: 0.5,
     },
   },
@@ -91,17 +84,10 @@ export const BlogCardDemo = React.memo(function BlogCard(props) {
         <CardContent>
           <TextInfoContent
             classes={contentStyles}
-            // overline={"28 MAR 2019"}
             heading={props.header}
-            // style={{ userSelect: "none" }}
             body={props.text}
           />
-
-          {/* <br /> */}
-          {/* <br /> */}
-          {/* <div style={{ cursor: "pointer" }}> */}
           <Button className={buttonStyles}>Documentation</Button>
-          {/* </div> */}
         </CardContent>
       </Paper>
     </div>

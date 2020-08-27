@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Paper, Container, Grid } from "@material-ui/core";
-import Current from "./Current";
+
 import Content from "./Content";
 import Sidebar from "./Sidebar";
 
