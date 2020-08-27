@@ -14,7 +14,7 @@ import GridOfLogo from "./GridOfLogo";
 
 const useStyles = makeStyles({
   header: {
-    top: "160px",
+    top: "110px",
     left: "40px",
     fontSize: "30px",
     cursor: "normal",
@@ -86,130 +86,130 @@ export default () => {
   }, [nav]);
 
   return (
-    <div className="content">
-      {home && (
-        <div>
-          <br />
-          <br />
-          <h1 className={`ml10 ${classes.header}`}>
-            <span
-              style={{ marginBottom: "10px" }}
-              className="text-wrapper letters"
-            >
-              <span style={{ display: "block" }} ref={letterRef}>
-                {content["Home"]["line1"]}
-              </span>
-              <span style={{ display: "block" }} ref={letterRefL2}>
-                {content["Home"]["line2"]}
-              </span>
-              <span style={{ display: "block" }} ref={letterRefL3}>
-                {content["Home"]["line3"]}
-              </span>
-            </span>
-          </h1>
-        </div>
-      )}
-
-      {home && (
-        <p
-          className={`${classes.header} ml12`}
-          style={{
-            fontSize: "12px",
-            marginTop: "145px",
-            marginLeft: "41px",
-            opacity: "0.6",
-          }}
-          ref={smallText}
-        >
-          Passionate in Front-End Dev / Webdev in general
-        </p>
-      )}
-
-      {/* {spacing(1)} */}
-      <CSSTransition
-        in={nav === "Projects"}
-        timeout={4300}
-        classNames="alert"
-        unmountOnExit
-      >
-        <div
-          style={
-            {
-              // marginLeft: "600px",
-              // paddingRight: "90px",
-              // border: "2px solid black",
-              // borderRadius: "30px",
-              // width: "530px",
-            }
-          }
-        >
-          {nav === "Projects" && (
-            <>
-              <div
-                style={{
-                  height: `22.7em`,
-                  width: "530px",
-                  marginTop: "190px",
-                  borderRadius: "20px",
-                }}
+    <>
+      <div className="content">
+        {home && (
+          <div>
+            <h1 className={`ml10 ${classes.header}`}>
+              <span
+                style={{ marginBottom: "10px" }}
+                className="text-wrapper letters"
               >
-                <ScrollHorizontal>
-                  <div style={{ margin: "50px 45px" }}>
-                    <BlogCardDemo />
-                  </div>
-                  <div style={{ margin: "100px 45px" }}>
-                    <BlogCardDemo />
-                  </div>
+                <span style={{ display: "block" }} ref={letterRef}>
+                  {content["Home"]["line1"]}
+                </span>
+                <span style={{ display: "block" }} ref={letterRefL2}>
+                  {content["Home"]["line2"]}
+                </span>
+                <span style={{ display: "block" }} ref={letterRefL3}>
+                  {content["Home"]["line3"]}
+                </span>
+              </span>
+            </h1>
+          </div>
+        )}
 
-                  <div style={{ margin: "50px 45px" }}>
-                    <BlogCardDemo />
-                  </div>
-                </ScrollHorizontal>
-                <div style={{ marginLeft: "220px" }}>
-                  <IconTest />
-                </div>
-              </div>
-            </>
-          )}
-        </div>
-      </CSSTransition>
-      {/* <br /> */}
-      {nav && (
-        <CSSTransition
-          in={nav === "About Me"}
-          timeout={4300}
-          classNames="abouts"
-          unmountOnExit
-        >
-          <div
+        {home && (
+          <p
+            className={`${classes.header} ml12`}
             style={{
-              fontFamily: "Recursive",
-              position: "absolute",
-              marginTop: "140px",
-              marginLeft: "20px",
-
-              width: "510px",
-              height: "900px",
+              fontSize: "12px",
+              marginTop: "95px",
+              marginLeft: "41px",
+              opacity: "0.6",
               userSelect: "none",
             }}
+            ref={smallText}
           >
-            {spacing(20)}
-            <h2 style={{ color: "rgba(61, 61, 61, 0.82)" }}>
-              {content[nav] ? content[nav].title : ""}
-            </h2>
-            <div style={{ lineHeight: 1.6, color: "rgba(61, 61, 61, 0.72)" }}>
-              {content[nav] ? content[nav].desc : ""}
-            </div>
-            {/* <h3 style={{ color: "rgba(61, 61, 61, 0.72)" }}>Contacts</h3> */}
-            {/* <div
-              style={{ width: "330px", marginTop: "20px", marginLeft: "85px" }}
-            >
-              
-            </div> */}
-            <GridOfLogo />
+            Passionate in Front-End Dev / Webdev in general
+          </p>
+        )}
+
+        <CSSTransition
+          in={nav === "Projects"}
+          timeout={4300}
+          classNames="alert"
+          unmountOnExit
+        >
+          <div>
+            {nav === "Projects" && (
+              <>
+                <div
+                  style={{
+                    height: `22.7em`,
+                    width: "530px",
+                    // marginTop: "190px",
+                    borderRadius: "20px",
+                  }}
+                >
+                  <ScrollHorizontal>
+                    <div style={{ margin: "50px 35px" }}>
+                      <BlogCardDemo
+                        header="Disscuss"
+                        text="Reddit wannabe but with some preferences style of mine."
+                      />
+                    </div>
+                    <div style={{ margin: "100px 45px" }}>
+                      <BlogCardDemo
+                        header="Portofolio"
+                        text="A Personal website for showcase project i've done in past."
+                      />
+                    </div>
+
+                    <div style={{ margin: "50px 45px" }}>
+                      <BlogCardDemo
+                        header="Info Extractor"
+                        text="Web based app to extract relevant information given text/articles input."
+                      />
+                    </div>
+                    <div style={{ margin: "100px 45px" }}>
+                      <BlogCardDemo
+                        header="15-Puzzle Solver"
+                        text="CLI based visualizer for solving 15-puzzle using branch and bound."
+                      />
+                    </div>
+                  </ScrollHorizontal>
+                  <div style={{ marginLeft: "220px" }}>
+                    <IconTest />
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </CSSTransition>
-      )}
-    </div>
+        {/* <br /> */}
+        {nav && (
+          <CSSTransition
+            in={nav === "About Me"}
+            timeout={4300}
+            classNames="abouts"
+            unmountOnExit
+          >
+            <div
+              style={{
+                fontFamily: "Recursive",
+                position: "absolute",
+                marginTop: "10px",
+                marginLeft: "20px",
+
+                width: "510px",
+                height: "900px",
+                userSelect: "none",
+              }}
+            >
+              {spacing(45)}
+              <h2 style={{ color: "rgba(61, 61, 61, 0.82)" }}>
+                {content[nav] ? content[nav].title : ""}
+              </h2>
+              <div style={{ lineHeight: 1.6, color: "rgba(61, 61, 61, 0.72)" }}>
+                {content[nav] ? content[nav].desc : ""}
+              </div>
+
+              <GridOfLogo />
+            </div>
+          </CSSTransition>
+        )}
+      </div>
+    </>
   );
 };

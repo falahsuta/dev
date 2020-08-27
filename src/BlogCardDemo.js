@@ -72,7 +72,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   },
 }));
 
-export const BlogCardDemo = React.memo(function BlogCard() {
+export const BlogCardDemo = React.memo(function BlogCard(props) {
   const styles = useStyles();
   const {
     button: buttonStyles,
@@ -92,14 +92,16 @@ export const BlogCardDemo = React.memo(function BlogCard() {
           <TextInfoContent
             classes={contentStyles}
             // overline={"28 MAR 2019"}
-            heading={"DissCuss"}
+            heading={props.header}
             // style={{ userSelect: "none" }}
-            body={"Reddit wannabe but with some preferences style of mine."}
+            body={props.text}
           />
 
           {/* <br /> */}
           {/* <br /> */}
+          {/* <div style={{ cursor: "pointer" }}> */}
           <Button className={buttonStyles}>Documentation</Button>
+          {/* </div> */}
         </CardContent>
       </Paper>
     </div>
