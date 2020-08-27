@@ -1,8 +1,17 @@
 import React, { useState } from "react";
-import "./style/Scroll.css";
+import "../style/Scroll.css";
 
 export default (props) => {
   const [isShown, setIsShown] = useState(false);
+
+  // On Hover
+  const handleOpen = () => {
+    setIsShown(true);
+  };
+
+  const handleClose = () => {
+    setIsShown(false);
+  };
 
   return (
     <>
@@ -16,8 +25,8 @@ export default (props) => {
           marginTop: "20px",
           marginLeft: props.text === "Linkedin" ? "-5px" : undefined,
         }}
-        onMouseEnter={() => setIsShown(true)}
-        onMouseLeave={() => setIsShown(false)}
+        onMouseEnter={handleOpen}
+        onMouseLeave={handleClose}
       >
         <div
           style={{

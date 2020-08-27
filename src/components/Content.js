@@ -2,13 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import { makeStyles } from "@material-ui/styles";
 import { CSSTransition } from "react-transition-group";
 import ScrollHorizontal from "react-scroll-horizontal";
-import { useSelector } from "react-redux";
-import content from "./dynamic-content";
 import anime from "animejs";
+import { useSelector } from "react-redux";
 
-import Card from "./Card";
-import BlogCardDemo from "./BlogCardDemo";
-import "./style/Content.css";
+import "../style/Content.css";
+import content from "./dynamic-content";
+import PortoCard from "./PortoCard";
 import ScrollUp from "./ScrollUp";
 import GridOfLogo from "./GridOfLogo";
 
@@ -138,32 +137,31 @@ export default () => {
                   style={{
                     height: `22.7em`,
                     width: "530px",
-                    // marginTop: "190px",
                     borderRadius: "20px",
                   }}
                 >
                   <ScrollHorizontal>
                     <div style={{ margin: "50px 35px" }}>
-                      <BlogCardDemo
+                      <PortoCard
                         header="Disscuss"
                         text="Reddit wannabe but with some preferences style of mine."
                       />
                     </div>
                     <div style={{ margin: "100px 45px" }}>
-                      <BlogCardDemo
+                      <PortoCard
                         header="Portofolio"
                         text="A Personal website for showcase project i've done in past."
                       />
                     </div>
 
                     <div style={{ margin: "50px 45px" }}>
-                      <BlogCardDemo
+                      <PortoCard
                         header="Info Extractor"
                         text="Web based app to extract relevant information given text/articles input."
                       />
                     </div>
                     <div style={{ margin: "100px 45px" }}>
-                      <BlogCardDemo
+                      <PortoCard
                         header="15-Puzzle Solver"
                         text="CLI based visualizer for solving 15-puzzle using branch and bound."
                       />
@@ -177,7 +175,7 @@ export default () => {
             )}
           </div>
         </CSSTransition>
-        {/* <br /> */}
+
         {nav && (
           <CSSTransition
             in={nav === "About Me"}
