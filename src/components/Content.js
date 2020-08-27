@@ -1,15 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { makeStyles } from "@material-ui/styles";
 import { CSSTransition } from "react-transition-group";
-import ScrollHorizontal from "react-scroll-horizontal";
 import anime from "animejs";
 import { useSelector } from "react-redux";
 
 import "../style/Content.css";
 import content from "./dynamic-content";
-import PortoCard from "./PortoCard";
-import ScrollUp from "./ScrollUp";
-import GridOfLogo from "./GridOfLogo";
+import ContentAbout from "./ContentAbout";
+import ContentProj from "./ContentProj";
 
 const useStyles = makeStyles({
   header: {
@@ -22,11 +20,19 @@ const useStyles = makeStyles({
   },
 });
 
+const paragraph = {
+  fontSize: "12px",
+  marginTop: "95px",
+  marginLeft: "41px",
+  opacity: "0.6",
+  userSelect: "none",
+};
+
 export default () => {
   const [home, setHome] = useState(false);
   const nav = useSelector((state) => state.nav);
-  const classes = useStyles();
 
+  const classes = useStyles();
   const letterRef = useRef();
   const letterRefL2 = useRef();
   const letterRefL3 = useRef();
@@ -35,9 +41,6 @@ export default () => {
   const spacing = (num) => {
     return <div style={{ marginTop: "3px", width: "30px", height: num }}></div>;
   };
-
-  const link =
-    "https://scontent-ort2-1.cdninstagram.com/v/t51.2885-19/66783490_416730902531381_5845601586805473280_n.jpg?_nc_ht=scontent-ort2-1.cdninstagram.com&_nc_ohc=6fy60-UU2IwAX9X0dLI&oh=72f43fda338b81d0d9f00103828ee541&oe=5F42A558";
 
   useEffect(() => {
     if (nav === "Home") {
@@ -111,13 +114,7 @@ export default () => {
         {home && (
           <p
             className={`${classes.header} ml12`}
-            style={{
-              fontSize: "12px",
-              marginTop: "95px",
-              marginLeft: "41px",
-              opacity: "0.6",
-              userSelect: "none",
-            }}
+            style={paragraph}
             ref={smallText}
           >
             Passionate in Front-End Dev / Webdev in general
@@ -130,50 +127,7 @@ export default () => {
           classNames="alert"
           unmountOnExit
         >
-          <div>
-            {nav === "Projects" && (
-              <>
-                <div
-                  style={{
-                    height: `22.7em`,
-                    width: "530px",
-                    borderRadius: "20px",
-                  }}
-                >
-                  <ScrollHorizontal>
-                    <div style={{ margin: "50px 35px" }}>
-                      <PortoCard
-                        header="Disscuss"
-                        text="Reddit wannabe but with some preferences style of mine."
-                      />
-                    </div>
-                    <div style={{ margin: "100px 45px" }}>
-                      <PortoCard
-                        header="Portofolio"
-                        text="A Personal website for showcase project i've done in past."
-                      />
-                    </div>
-
-                    <div style={{ margin: "50px 45px" }}>
-                      <PortoCard
-                        header="Info Extractor"
-                        text="Web based app to extract relevant information given text/articles input."
-                      />
-                    </div>
-                    <div style={{ margin: "100px 45px" }}>
-                      <PortoCard
-                        header="15-Puzzle Solver"
-                        text="CLI based visualizer for solving 15-puzzle using branch and bound."
-                      />
-                    </div>
-                  </ScrollHorizontal>
-                  <div style={{ marginLeft: "220px" }}>
-                    <ScrollUp />
-                  </div>
-                </div>
-              </>
-            )}
-          </div>
+          <div>{nav === "Projects" && <ContentProj />}</div>
         </CSSTransition>
 
         {nav && (
@@ -183,28 +137,7 @@ export default () => {
             classNames="abouts"
             unmountOnExit
           >
-            <div
-              style={{
-                fontFamily: "Recursive",
-                position: "absolute",
-                marginTop: "10px",
-                marginLeft: "20px",
-
-                width: "510px",
-                height: "900px",
-                userSelect: "none",
-              }}
-            >
-              {spacing(45)}
-              <h2 style={{ color: "rgba(61, 61, 61, 0.82)" }}>
-                {content[nav] ? content[nav].title : ""}
-              </h2>
-              <div style={{ lineHeight: 1.6, color: "rgba(61, 61, 61, 0.72)" }}>
-                {content[nav] ? content[nav].desc : ""}
-              </div>
-
-              <GridOfLogo />
-            </div>
+            <ContentAbout nav={nav} />
           </CSSTransition>
         )}
       </div>

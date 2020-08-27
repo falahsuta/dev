@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/styles";
 import { CSSTransition } from "react-transition-group";
 import { useDispatch } from "react-redux";
 
 import { selectNav } from "../actions";
 import "../style/Sidebar.css";
-
-const useStyles = makeStyles({});
 
 export default () => {
   const dispatch = useDispatch();
@@ -15,13 +12,6 @@ export default () => {
   const [onMenu, setOnMenu] = useState("");
   const [icon, setIcon] = useState(false);
   const [first, setFirst] = useState(false);
-
-  const classes = useStyles();
-  const logo = [
-    "ri-arrow-left-s-line",
-    "ri-code-s-slash-line",
-    "ri-arrow-left-s-line",
-  ];
 
   useEffect(() => {
     setTimeout(() => {
