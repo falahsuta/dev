@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import cx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -7,7 +7,9 @@ import Button from "@material-ui/core/Button";
 import TextInfoContent from "@mui-treasury/components/content/textInfo";
 import { useBlogTextInfoContentStyles } from "@mui-treasury/styles/textInfoContent/blog";
 import { useOverShadowStyles } from "@mui-treasury/styles/shadow/over";
-import Paper from "@material-ui/core/Paper";
+import { Dialog, Paper, Slide } from "@material-ui/core";
+
+import Tester from "../Tester";
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   root: {
@@ -64,32 +66,57 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   },
 }));
 
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
 export const PortoCard = React.memo(function BlogCard(props) {
   const styles = useStyles();
+  const [openClick, setOpenClick] = useState(false);
   const {
     button: buttonStyles,
     ...contentStyles
   } = useBlogTextInfoContentStyles();
   const shadowStyles = useOverShadowStyles();
+
+  const handleClickClose = () => {
+    setOpenClick(false);
+  };
+
   return (
-    <div style={{ userSelect: "none" }}>
-      <Paper elevation={0} className={cx(styles.root, shadowStyles.root)}>
-        <CardMedia
-          className={styles.media}
-          image={
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2000px-Git_icon.svg.png"
-          }
-        />
-        <CardContent>
-          <TextInfoContent
-            classes={contentStyles}
-            heading={props.header}
-            body={props.text}
+    <>
+      <div style={{ userSelect: "none" }}>
+        <Paper elevation={0} className={cx(styles.root, shadowStyles.root)}>
+          <CardMedia
+            className={styles.media}
+            image={
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2000px-Git_icon.svg.png"
+            }
           />
-          <Button className={buttonStyles}>Documentation</Button>
-        </CardContent>
-      </Paper>
-    </div>
+          <CardContent>
+            <TextInfoContent
+              classes={contentStyles}
+              heading={props.header}
+              body={props.text}
+            />
+            <Button onClick={() => setOpenClick(true)} className={buttonStyles}>
+              Documentation
+            </Button>
+          </CardContent>
+        </Paper>
+      </div>
+      <Dialog
+        open={openClick}
+        TransitionComponent={Transition}
+        onClose={() => handleClickClose()}
+        aria-labelledby="alert-dialog-slide-title"
+        aria-describedby="alert-dialog-slide-description"
+        maxWidth="lg"
+        scroll="paper"
+        disableScrollLock
+        PaperComponent={Tester}
+      />
+    </>
   );
 });
 

@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { selectNav } from "./actions";
 
 import Boxer from "./components/Boxer";
+import Tester from "./Tester";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -14,6 +15,7 @@ const App = () => {
 
   return (
     <>
+      {/* <Tester /> */}
       <Boxer />
     </>
   );

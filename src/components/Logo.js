@@ -22,6 +22,7 @@ export default (props) => {
           userSelect: "none",
           width: "70px",
           height: "20px",
+          cursor: "pointer",
           marginTop: "20px",
           marginLeft: props.text === "Linkedin" ? "-5px" : undefined,
         }}
@@ -54,14 +55,14 @@ export default (props) => {
           style={{
             fontSize: "14px",
             display: "inline-block",
-            marginLeft: "1px",
+            marginLeft: props.rep ? "4px" : "1px",
             marginTop: "4px",
             fontFamily: "Recursive",
             position: "absolute",
             cursor: "pointer",
           }}
         >
-          {props.text}
+          {props.rep ? props.rep : props.text}
         </span>
       </div>
     </>

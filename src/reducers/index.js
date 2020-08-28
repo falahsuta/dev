@@ -7,6 +7,15 @@ const selectedNavReducer = (selectedNav = null, action) => {
   return selectedNav;
 };
 
+const dialReducer = (state = false, action) => {
+  if (action.type === "DIAL_OPENED" || action.type === "DIAL_CLOSED") {
+    return action.payload;
+  }
+
+  return state;
+};
+
 export default combineReducers({
   nav: selectedNavReducer,
+  dial: dialReducer,
 });
