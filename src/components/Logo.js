@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../style/Scroll.css";
 
-export default (props) => {
+const Logo = (props) => {
   const [isShown, setIsShown] = useState(false);
 
   // On Hover
@@ -10,15 +10,27 @@ export default (props) => {
   };
 
   const handleClose = () => {
-    setIsShown(false);
+    if (!props.mobile) {
+      setIsShown(false);
+    }
   };
+
+  useEffect(() => {
+    if (props.mobile) {
+      setIsShown(true);
+    }
+  }, []);
 
   return (
     <>
       <div
         className="vert-move1"
         style={{
-          color: isShown ? "rgba(61, 61, 61, 0.82)" : "rgba(61, 61, 61, 0.52)",
+          color: props.mobile
+            ? "rgba(61, 61, 61, 0.62)"
+            : isShown
+            ? "rgba(61, 61, 61, 0.82)"
+            : "rgba(61, 61, 61, 0.52)",
           userSelect: "none",
           width: "70px",
           height: "20px",
@@ -31,7 +43,7 @@ export default (props) => {
       >
         <div
           style={{
-            fontSize: "23px",
+            fontSize: props.mobile ? "27px" : "23px",
             marginTop: props.text === "Linkedin" ? "-2px" : undefined,
             display: "inline-block",
           }}
@@ -53,7 +65,7 @@ export default (props) => {
         </div>
         <span
           style={{
-            fontSize: "14px",
+            fontSize: props.mobile ? "17px" : "14px",
             display: "inline-block",
             marginLeft: props.rep ? "4px" : "1px",
             marginTop: "4px",
@@ -68,3 +80,5 @@ export default (props) => {
     </>
   );
 };
+
+export default React.memo(Logo);

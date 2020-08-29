@@ -1,30 +1,11 @@
 import React from "react";
 import ScrollHorizontal from "react-scroll-horizontal";
+
+import { data } from "./data-proj";
 import PortoCard from "./PortoCard";
 import ScrollUp from "./ScrollUp";
 
-export default () => {
-  const data = [
-    {
-      header: "Disscuss",
-      text: "Reddit wannabe but with some preferences style of mine.",
-    },
-    {
-      header: "Portofolio",
-      text: "A Personal website for showcase project i've done in past.",
-    },
-    {
-      header: "Info Extractor",
-      text:
-        "Web based app to extract relevant information given text/articles input.",
-    },
-    {
-      header: "15-Puzzle Solver",
-      text:
-        "CLI based visualizer for solving 15-puzzle using branch and bound.",
-    },
-  ];
-
+const ContentProj = () => {
   return (
     <>
       <div
@@ -45,7 +26,11 @@ export default () => {
 
             return (
               <div style={{ margin }}>
-                <PortoCard header={element.header} text={element.text} />
+                <PortoCard
+                  key={element.header}
+                  header={element.header}
+                  text={element.text}
+                />
               </div>
             );
           })}
@@ -57,3 +42,5 @@ export default () => {
     </>
   );
 };
+
+export default React.memo(ContentProj);

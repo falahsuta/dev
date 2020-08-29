@@ -1,7 +1,7 @@
 import React from "react";
 import "../style/Scroll.css";
 
-export default () => {
+const ScrollUp = () => {
   return (
     <>
       <div
@@ -37,3 +37,5 @@ export default () => {
     </>
   );
 };
+
+export default React.memo(ScrollUp);

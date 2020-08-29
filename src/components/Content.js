@@ -28,7 +28,7 @@ const paragraph = {
   userSelect: "none",
 };
 
-export default () => {
+const Content = () => {
   const [home, setHome] = useState(false);
   const nav = useSelector((state) => state.nav);
 
@@ -144,3 +144,5 @@ export default () => {
     </>
   );
 };
+
+export default React.memo(Content);

@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Boxer() {
+const Boxer = () => {
   const classes = useStyles();
 
   const spacing = (num) => {
@@ -41,12 +41,12 @@ export default function Boxer() {
                 justify="space-around"
                 alignItems="flex-start"
               >
-                <Grid items xs={9}>
+                <Grid item xs={9}>
                   <div style={{ marginLeft: "60px" }}>
                     <Content />
                   </div>
                 </Grid>
-                <Grid items xs={3}>
+                <Grid item xs={3}>
                   <div style={{ marginRight: "100px", marginTop: "130px" }}>
                     <Sidebar />
                   </div>
@@ -58,4 +58,6 @@ export default function Boxer() {
       </Container>
     </>
   );
-}
+};
+
+export default React.memo(Boxer);

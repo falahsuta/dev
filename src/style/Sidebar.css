@@ -90,7 +90,7 @@
 }
 
 .blink {
-  animation: blinker 1s step-start infinite;
+  animation: blinker 0.7s step-start infinite;
 }
 
 @keyframes blinker {

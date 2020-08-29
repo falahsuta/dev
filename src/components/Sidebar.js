@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { selectNav } from "../actions";
 import "../style/Sidebar.css";
 
-export default () => {
+const Sidebar = () => {
   const dispatch = useDispatch();
 
   const [onSelect, setOnSelect] = useState("Home");
@@ -21,57 +21,55 @@ export default () => {
 
   const menus = ["Home", "Projects", "About Me"].map((menu, index) => {
     return (
-      <>
-        <div
-          key={menu}
-          className={`card ${menu === onSelect && "selected-card"}`}
-          onMouseEnter={() => {
-            setOnMenu(menu);
-          }}
-          onMouseLeave={() => {
-            setOnMenu("");
-          }}
-          onClick={() => {
-            if (onMenu !== onSelect) {
-              setTimeout(() => {
-                setIcon(true);
-              }, 200);
-              setOnSelect("");
-              setTimeout(() => {
-                setIcon(false);
-              }, 900);
+      <div
+        key={menu}
+        className={`card ${menu === onSelect && "selected-card"}`}
+        onMouseEnter={() => {
+          setOnMenu(menu);
+        }}
+        onMouseLeave={() => {
+          setOnMenu("");
+        }}
+        onClick={() => {
+          if (onMenu !== onSelect) {
+            setTimeout(() => {
+              setIcon(true);
+            }, 200);
+            setOnSelect("");
+            setTimeout(() => {
+              setIcon(false);
+            }, 900);
 
-              setTimeout(() => {
-                setOnSelect(menu);
-                dispatch(selectNav(menu));
-              }, 500);
-            }
-          }}
+            setTimeout(() => {
+              setOnSelect(menu);
+              dispatch(selectNav(menu));
+            }, 500);
+          }
+        }}
+      >
+        <span
+          className={`card-text && ${
+            menu === onMenu && onSelect !== onMenu && "moving-left"
+          }`}
         >
-          <span
-            className={`card-text && ${
-              menu === onMenu && onSelect !== onMenu && "moving-left"
-            }`}
-          >
-            {menu}
-          </span>
+          {menu}
+        </span>
 
-          <span
-            style={{
-              color: "rgba(40, 40, 40, 0.899)",
-              cursor: "pointer",
-              marginRight: "-13px",
-              marginBottom: "2px",
-              fontSize: "15px",
-              transition: "all 0.1s ease-in-out",
-              opacity: "0.75",
-            }}
-            className="blink"
-          >
-            {!icon && menu === onSelect && <span> _</span>}
-          </span>
-        </div>
-      </>
+        <span
+          style={{
+            color: "rgba(40, 40, 40, 0.899)",
+            cursor: "pointer",
+            marginRight: "-13px",
+            marginBottom: "2px",
+            fontSize: "15px",
+            transition: "all 0.1s ease-in-out",
+            opacity: "0.75",
+          }}
+          className="blink"
+        >
+          {!icon && menu === onSelect && <span> _</span>}
+        </span>
+      </div>
     );
   });
 
@@ -83,3 +81,5 @@ export default () => {
     </>
   );
 };
+
+export default React.memo(Sidebar);

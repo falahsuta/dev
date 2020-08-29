@@ -2,7 +2,7 @@ import React from "react";
 import GridOfLogo from "./GridOfLogo";
 import content from "./dynamic-content";
 
-export default (props) => {
+const ContentAbout = (props) => {
   const { nav } = props;
 
   const spacing = (num) => {
@@ -36,3 +36,5 @@ export default (props) => {
     </>
   );
 };
+
+export default React.memo(ContentAbout);

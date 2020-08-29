@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Paper, Grid } from "@material-ui/core";
-import Logo from "./components/Logo";
+import Logo from "./Logo";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,8 +20,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimplePaper() {
+const DialProj = (props) => {
   const classes = useStyles();
+  const { data } = props;
 
   return (
     <div className={classes.root}>
@@ -42,7 +43,7 @@ export default function SimplePaper() {
           >
             <h2 style={{ color: "rgba(61, 61, 61, 0.82)" }}>Discuss</h2>
             <h4 style={{ color: "rgba(61, 61, 61, 0.79)" }}>
-              Stacks: React, Express, Mongo
+              {`Stacks: ${data.stacks}`}
             </h4>
             <h3
               style={{ color: "rgba(61, 61, 61, 0.82)", marginBottom: "-8px" }}
@@ -56,8 +57,7 @@ export default function SimplePaper() {
                 fontSize: "13px",
               }}
             >
-              Disscuss is a platform to share and exchange ideas, designed to
-              accomodate more on user interaction, such as threaded comments.
+              {data.descriptions}
             </p>
             <h3
               style={{ color: "rgba(61, 61, 61, 0.82)", marginBottom: "-8px" }}
@@ -71,11 +71,7 @@ export default function SimplePaper() {
                 fontSize: "13px",
               }}
             >
-              The UI features including dialog based interactions (creating
-              post, submitting form, viewing post), threaded comments style,
-              infinite fetch posts (server-side pagination), tags categories,
-              and also multi-step validation form. In server-side it also has
-              authentication and authorization system (jwt-token).
+              {data.features}
             </p>
 
             <div style={{ marginLeft: "200px", marginTop: "30px" }}>
@@ -86,4 +82,6 @@ export default function SimplePaper() {
       </Paper>
     </div>
   );
-}
+};
+
+export default React.memo(DialProj);

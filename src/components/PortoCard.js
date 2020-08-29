@@ -9,7 +9,8 @@ import { useBlogTextInfoContentStyles } from "@mui-treasury/styles/textInfoConte
 import { useOverShadowStyles } from "@mui-treasury/styles/shadow/over";
 import { Dialog, Paper, Slide } from "@material-ui/core";
 
-import Tester from "../Tester";
+import DialProj from "./DialProj";
+import { detailData } from "./data-detail-proj";
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   root: {
@@ -70,7 +71,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export const PortoCard = React.memo(function BlogCard(props) {
+const PortoCard = (props) => {
   const styles = useStyles();
   const [openClick, setOpenClick] = useState(false);
   const {
@@ -114,10 +115,10 @@ export const PortoCard = React.memo(function BlogCard(props) {
         maxWidth="lg"
         scroll="paper"
         disableScrollLock
-        PaperComponent={Tester}
+        PaperComponent={() => <DialProj data={detailData[props.header]} />}
       />
     </>
   );
-});
+};
 
-export default PortoCard;
+export default React.memo(PortoCard);
