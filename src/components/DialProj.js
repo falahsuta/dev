@@ -41,7 +41,7 @@ const DialProj = (props) => {
               marginLeft: "32px",
             }}
           >
-            <h2 style={{ color: "rgba(61, 61, 61, 0.82)" }}>Discuss</h2>
+            <h2 style={{ color: "rgba(61, 61, 61, 0.82)" }}>{props.header}</h2>
             <h4 style={{ color: "rgba(61, 61, 61, 0.79)" }}>
               {`Stacks: ${data.stacks}`}
             </h4>

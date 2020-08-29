@@ -115,7 +115,9 @@ const PortoCard = (props) => {
         maxWidth="lg"
         scroll="paper"
         disableScrollLock
-        PaperComponent={() => <DialProj data={detailData[props.header]} />}
+        PaperComponent={() => (
+          <DialProj header={props.header} data={detailData[props.header]} />
+        )}
       />
     </>
   );
