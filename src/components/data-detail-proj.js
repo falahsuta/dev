@@ -8,7 +8,7 @@ export const detailData = {
   },
   Portofolio: {
     stacks: "React",
-    descriptions: "Portofolio web to just showcase projects",
+    descriptions: "Portofolio web to just showcase projects.",
     features:
       "Single page application, page transition, some dialog interactions, and simple animations",
   },
