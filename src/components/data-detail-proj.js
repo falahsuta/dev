@@ -5,12 +5,14 @@ export const detailData = {
       "Disscuss is a platform to share and exchange ideas, designed to accomodate more on user interaction, such as threaded comments.",
     features:
       "The UI features including dialog based interactions (creating post, submitting form, viewing post), threaded comments style, infinite fetch posts (server-side pagination), tags categories, and also multi-step validation form. In server-side it also has authentication and authorization system (jwt-token).",
+    height: 48,
   },
   Portofolio: {
     stacks: "React",
     descriptions: "Portofolio web to just showcase projects.",
     features:
       "Single page application, page transition, some dialog interactions, and simple animations",
+    height: 40,
   },
   "Info Extractor": {
     stacks: "Flash (Python)",

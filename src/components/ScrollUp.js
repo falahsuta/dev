@@ -18,7 +18,10 @@ const ScrollUp = () => {
               className="ri-arrow-up-s-line"
             ></i>
 
-            <i style={{ display: "block" }} class="ri-arrow-drop-up-line"></i>
+            <i
+              style={{ display: "block" }}
+              className="ri-arrow-drop-up-line"
+            ></i>
           </div>
         </div>
         <span

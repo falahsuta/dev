@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: theme.spacing(48),
       // boxShadow: "0px 8px 45px 0 rgba(31, 31, 31, 0.15)",
-      height: theme.spacing(48),
+      height: (props) => theme.spacing(props.height),
       borderRadius: "14px",
       fontFamily: "Recursive",
       fontSize: "14px",
@@ -21,8 +21,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const DialProj = (props) => {
-  const classes = useStyles();
   const { data } = props;
+  const classes = useStyles(data);
 
   return (
     <div className={classes.root}>
