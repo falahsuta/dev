@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
       fontFamily: "Recursive",
       fontSize: "14px",
       userSelect: "none",
-      marginBottom: "40px",
+      marginBottom: "20px",
     },
   },
 }));
@@ -51,13 +51,25 @@ const DialProj = (props) => {
               style={{
                 borderRadius: "8px",
                 marginLeft: "25px",
-                marginBottom: "5px",
+                marginBottom: "-5px",
+                cursor: "pointer",
               }}
+              onClick={() => window.open(data.giflink, "_blank")}
               src={data.gif}
             />
+            <p
+              style={{
+                color: "rgba(61, 61, 61, 0.70)",
+                marginLeft: "98px",
+                marginBottom: "-5px",
+                fontSize: "11px",
+              }}
+            >
+              (Click the image for clarity)
+            </p>
 
             <h3
-              style={{ color: "rgba(61, 61, 61, 0.82)", marginBottom: "-8px" }}
+              style={{ color: "rgba(61, 61, 61, 0.82)", marginBottom: "-5px" }}
             >
               Descriptions
             </h3>
@@ -85,8 +97,14 @@ const DialProj = (props) => {
               {data.features}
             </p>
 
-            <div style={{ marginLeft: "255px", marginTop: "32px" }}>
-              <Logo text="Github" rep="Repository" />
+            <div
+              style={{
+                marginLeft: "255px",
+                marginTop: data.header === "15-Puzzle Solver" ? "30px" : "25px",
+              }}
+            >
+              {/* <div style={{ marginLeft: "255px", marginTop: "32px" }}> */}
+              <Logo text="Github" rep="Repository" linkto={data.linkto} />
             </div>
           </div>
         </Grid>

@@ -4,13 +4,13 @@ export const data = [
     text: "Reddit wannabe but with some preferences style of mine.",
   },
   {
-    header: "Portofolio",
-    text: "A Personal website for showcase project i've done in past.",
-  },
-  {
     header: "Info Extractor",
     text:
       "Web based app to extract relevant information given text/articles input.",
+  },
+  {
+    header: "Portofolio",
+    text: "A Personal website for showcase project i have done in past.",
   },
   {
     header: "15-Puzzle Solver",

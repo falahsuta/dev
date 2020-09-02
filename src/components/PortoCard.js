@@ -93,11 +93,13 @@ const PortoCard = (props) => {
             image={
               "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2000px-Git_icon.svg.png"
             }
+            // image={detailData[props.header].gif}
           />
           <CardContent>
             <TextInfoContent
               classes={contentStyles}
               heading={props.header}
+              // body={detailData[props.header].descriptions}
               body={props.text}
             />
             <Button onClick={() => setOpenClick(true)} className={buttonStyles}>

@@ -40,6 +40,7 @@ const Logo = (props) => {
         }}
         onMouseEnter={handleOpen}
         onMouseLeave={handleClose}
+        onClick={() => window.open(props.linkto, "_blank")}
       >
         <div
           style={{

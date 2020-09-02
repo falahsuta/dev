@@ -134,7 +134,7 @@ const Content = () => {
           <CSSTransition
             in={nav === "About Me"}
             timeout={4300}
-            classNames="abouts"
+            classNames="alert"
             unmountOnExit
           >
             <ContentAbout nav={nav} />

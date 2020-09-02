@@ -8,13 +8,19 @@ const GridOfLogo = () => {
       <div style={{ width: "330px", marginLeft: "110px", marginTop: "150px" }}>
         <Grid container direction="row" justify="center" alignItems="center">
           <Grid item xs>
-            <Logo text="Github" />
+            <Logo text="Github" linkto="https://github.com/falahsuta" />
           </Grid>
           <Grid item xs>
-            <Logo text="Linkedin" />
+            <Logo
+              text="Linkedin"
+              linkto="https://www.linkedin.com/in/falah-sutawindaya/"
+            />
           </Grid>
           <Grid item xs>
-            <Logo text="Instagram" />
+            <Logo
+              text="Instagram"
+              linkto="https://instagram.com/falahsutawindaya"
+            />
           </Grid>
         </Grid>
       </div>

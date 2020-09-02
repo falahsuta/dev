@@ -84,6 +84,24 @@
   transition: opacity 300ms, transform 300ms;
 }
 
+.alert2-enter {
+  opacity: 0;
+  transform: translateY(-1em);
+}
+.alert2-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 1300ms, transform 1300ms;
+}
+.alert2-exit {
+  opacity: 1;
+}
+.alert2-exit-active {
+  opacity: 0;
+  transform: translateY(1em);
+  transition: opacity 300ms, transform 300ms;
+}
+
 .ml10 {
   position: relative;
   font-weight: 900;
