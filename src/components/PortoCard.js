@@ -91,10 +91,7 @@ const PortoCard = (props) => {
           <CardMedia
             className={styles.media}
             image={
-              // "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2000px-Git_icon.svg.png"
-              // "a.gif"
-              // "https://images.unsplash.com/photo-1598809344414-6c892e77a6c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-              "https://thumbs.gfycat.com/HeavyEasygoingAfricanelephant.webp"
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2000px-Git_icon.svg.png"
             }
           />
           <CardContent>
@@ -112,7 +109,7 @@ const PortoCard = (props) => {
       <Dialog
         open={openClick}
         TransitionComponent={Transition}
-        onClose={() => handleClickClose()}
+        onClose={handleClickClose}
         aria-labelledby="alert-dialog-slide-title"
         aria-describedby="alert-dialog-slide-description"
         maxWidth="lg"

@@ -9,13 +9,14 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     "& > *": {
       margin: theme.spacing(1),
-      width: theme.spacing(48),
+      width: theme.spacing(55),
       // boxShadow: "0px 8px 45px 0 rgba(31, 31, 31, 0.15)",
       height: (props) => theme.spacing(props.height),
       borderRadius: "14px",
       fontFamily: "Recursive",
       fontSize: "14px",
       userSelect: "none",
+      marginBottom: "40px",
     },
   },
 }));
@@ -45,6 +46,16 @@ const DialProj = (props) => {
             <h4 style={{ color: "rgba(61, 61, 61, 0.79)" }}>
               {`Stacks: ${data.stacks}`}
             </h4>
+
+            <img
+              style={{
+                borderRadius: "8px",
+                marginLeft: "25px",
+                marginBottom: "5px",
+              }}
+              src={data.gif}
+            />
+
             <h3
               style={{ color: "rgba(61, 61, 61, 0.82)", marginBottom: "-8px" }}
             >
@@ -52,7 +63,7 @@ const DialProj = (props) => {
             </h3>
             <p
               style={{
-                lineHeight: 1.0,
+                lineHeight: 1.1,
                 color: "rgba(61, 61, 61, 0.62)",
                 fontSize: "13px",
               }}
@@ -66,7 +77,7 @@ const DialProj = (props) => {
             </h3>
             <p
               style={{
-                lineHeight: 1.0,
+                lineHeight: 1.1,
                 color: "rgba(61, 61, 61, 0.62)",
                 fontSize: "13px",
               }}
@@ -74,7 +85,7 @@ const DialProj = (props) => {
               {data.features}
             </p>
 
-            <div style={{ marginLeft: "200px", marginTop: "30px" }}>
+            <div style={{ marginLeft: "255px", marginTop: "32px" }}>
               <Logo text="Github" rep="Repository" />
             </div>
           </div>
