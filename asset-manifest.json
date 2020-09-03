@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.bc001087.chunk.css",
-    "main.js": "/static/js/main.2469d493.chunk.js",
-    "main.js.map": "/static/js/main.2469d493.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.c70acead.js",
-    "runtime-main.js.map": "/static/js/runtime-main.c70acead.js.map",
-    "static/js/2.8c69801b.chunk.js": "/static/js/2.8c69801b.chunk.js",
-    "static/js/2.8c69801b.chunk.js.map": "/static/js/2.8c69801b.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.6a9f261ba801e6638e2ed9cc25d31ece.js": "/precache-manifest.6a9f261ba801e6638e2ed9cc25d31ece.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.bc001087.chunk.css.map": "/static/css/main.bc001087.chunk.css.map",
-    "static/js/2.8c69801b.chunk.js.LICENSE.txt": "/static/js/2.8c69801b.chunk.js.LICENSE.txt"
+    "main.css": "/porto/static/css/main.bc001087.chunk.css",
+    "main.js": "/porto/static/js/main.2469d493.chunk.js",
+    "main.js.map": "/porto/static/js/main.2469d493.chunk.js.map",
+    "runtime-main.js": "/porto/static/js/runtime-main.e9c74e69.js",
+    "runtime-main.js.map": "/porto/static/js/runtime-main.e9c74e69.js.map",
+    "static/js/2.8c69801b.chunk.js": "/porto/static/js/2.8c69801b.chunk.js",
+    "static/js/2.8c69801b.chunk.js.map": "/porto/static/js/2.8c69801b.chunk.js.map",
+    "index.html": "/porto/index.html",
+    "precache-manifest.74b5dfbec934758f823101f34f4d6900.js": "/porto/precache-manifest.74b5dfbec934758f823101f34f4d6900.js",
+    "service-worker.js": "/porto/service-worker.js",
+    "static/css/main.bc001087.chunk.css.map": "/porto/static/css/main.bc001087.chunk.css.map",
+    "static/js/2.8c69801b.chunk.js.LICENSE.txt": "/porto/static/js/2.8c69801b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c70acead.js",
+    "static/js/runtime-main.e9c74e69.js",
     "static/js/2.8c69801b.chunk.js",
     "static/css/main.bc001087.chunk.css",
     "static/js/main.2469d493.chunk.js"
