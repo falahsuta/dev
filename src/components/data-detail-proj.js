@@ -8,7 +8,7 @@ export const detailData = {
     height: 74,
     gif: "https://media4.giphy.com/media/j3mZ0w4038EKNMtZuI/giphy.gif",
     linkto: "https://github.com/falahsuta/Projects-1-Unamed",
-    giflink: "https://media1.giphy.com/media/iFsJzdqaQ3v66NGXXZ/giphy.gif",
+    giflink: "https://media2.giphy.com/media/iFsJzdqaQ3v66NGXXZ/giphy.gif",
   },
   "Info Extractor": {
     stacks: "Flask (Python)",
@@ -19,7 +19,7 @@ export const detailData = {
     gif: "https://media3.giphy.com/media/J4hThbQO89hS5HHp2m/giphy.gif",
     height: 70,
     linkto: "https://github.com/falahsuta/Info-Extraction",
-    giflink: "https://media1.giphy.com/media/hqg68DMCEhLhvekK3d/giphy.gif",
+    giflink: "https://media2.giphy.com/media/hqg68DMCEhLhvekK3d/giphy.gif",
   },
   Portofolio: {
     stacks: "React (Javascript)",
@@ -29,7 +29,7 @@ export const detailData = {
     height: 63,
     gif: "https://media3.giphy.com/media/RG4AAhncolcEuHNiox/giphy.gif",
     linkto: "https://github.com/falahsuta/Personal-Web-",
-    giflink: "https://media2.giphy.com/media/UWzoTLkoxDW8t1EASN/giphy.gif",
+    giflink: "https://media3.giphy.com/media/UWzoTLkoxDW8t1EASN/giphy.gif",
   },
   "15-Puzzle Solver": {
     stacks: "Python",

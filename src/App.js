@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <>
-      {isChrome && <Boxer />}
+      {isChrome && !isMobile && <Boxer />}
       {!isChrome && !isMobile && <View edge={Mark} />}
       {isMobile && <View mobile={Mark} />}
     </>
