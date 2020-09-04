@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Paper, Grid } from "@material-ui/core";
 import Logo from "./Logo";
@@ -46,17 +46,18 @@ const DialProj = (props) => {
             <h4 style={{ color: "rgba(61, 61, 61, 0.79)" }}>
               {`Stacks: ${data.stacks}`}
             </h4>
-
-            <img
-              style={{
-                borderRadius: "8px",
-                marginLeft: "25px",
-                marginBottom: "-5px",
-                cursor: "pointer",
-              }}
-              onClick={() => window.open(data.giflink, "_blank")}
-              src={data.gif}
-            />
+            <div style={{ height: "180px" }}>
+              <img
+                style={{
+                  borderRadius: "8px",
+                  marginLeft: "25px",
+                  marginBottom: "-5px",
+                  cursor: "pointer",
+                }}
+                onClick={() => window.open(data.giflink, "_blank")}
+                src={data.gif}
+              />
+            </div>
             <p
               style={{
                 color: "rgba(61, 61, 61, 0.70)",

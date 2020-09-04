@@ -26,7 +26,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     flexDirection: "column",
     alignItems: "center",
     width: 320,
-    [breakpoints.up("md")]: {
+    [breakpoints.up("xs")]: {
       flexDirection: "row",
     },
   },
@@ -40,7 +40,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     borderRadius: spacing(2),
     backgroundColor: "#fff",
     position: "relative",
-    [breakpoints.up("md")]: {
+    [breakpoints.up("xs")]: {
       width: "100%",
       marginLeft: spacing(-3),
       marginTop: 0,
