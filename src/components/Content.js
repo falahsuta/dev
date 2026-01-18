@@ -38,10 +38,6 @@ const Content = () => {
   const letterRefL3 = useRef();
   const smallText = useRef();
 
-  const spacing = (num) => {
-    return <div style={{ marginTop: "3px", width: "30px", height: num }}></div>;
-  };
-
   useEffect(() => {
     if (nav === "Home") {
       setTimeout(() => {
@@ -137,7 +133,7 @@ const Content = () => {
             classNames="alert"
             unmountOnExit
           >
-            <ContentAbout nav={nav} />
+            <div>{nav === "About Me" && <ContentAbout nav={nav} />}</div>
           </CSSTransition>
         )}
       </div>

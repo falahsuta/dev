@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { isMobile, isChrome } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 import { useDispatch } from "react-redux";
 import { selectNav } from "./actions";
 
@@ -12,12 +12,11 @@ const App = () => {
 
   useEffect(() => {
     dispatch(selectNav("Home"));
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
-      {isChrome && !isMobile && <Boxer />}
-      {!isChrome && !isMobile && <View edge={Mark} />}
+      {!isMobile && <Boxer />}
       {isMobile && <View mobile={Mark} />}
     </>
   );
