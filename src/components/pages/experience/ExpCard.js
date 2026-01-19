@@ -9,7 +9,7 @@ import { useBlogTextInfoContentStyles } from "@mui-treasury/styles/textInfoConte
 import { useOverShadowStyles } from "@mui-treasury/styles/shadow/over";
 import { Dialog, Paper, Slide } from "@material-ui/core";
 
-import DialProj from "../projects/DialProj";
+import DialExp from "./DialExp";
 import { detailData } from "./exp-data-detail";
 
 const useStyles = makeStyles(({ breakpoints, spacing, palette, typography }) => ({
@@ -174,7 +174,7 @@ const PortoCard = (props) => {
         scroll="paper"
         disableScrollLock
         PaperComponent={() => (
-          <DialProj header={props.header} data={detailData[props.header]} />
+          <DialExp header={props.header} data={detailData[props.header]} />
         )}
       />
     </>

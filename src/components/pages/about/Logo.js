@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../../style/Scroll.css";
 
-// Used by View.js in shared and DialProj.js in projects/experience
+// Used by View.js in shared, DialProj.js in projects, DialExp.js in experience
 const Logo = (props) => {
   const [isShown, setIsShown] = useState(false);
 

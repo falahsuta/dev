@@ -29,7 +29,7 @@ const GridOfLogo = () => {
         <Logo text="Instagram" linkto="https://instagram.com/falahsutawindaya" />
       </div>
       <div style={{ marginLeft: 30, marginRight: 0 }}>
-        <Logo text="Resume" linkto="https://instagram.com/falahsutawindaya" />
+        <Logo text="Resume" linkto="https://instagram.com/falahsutawindaya" rep="Resume/CV"/>
       </div>
     </div>
   );

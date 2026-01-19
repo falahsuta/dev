@@ -1,34 +1,38 @@
 export const detailData = {
-  Disscuss: {
-    stacks: "React, Express, Mongo",
-    descriptions:
-      "Disscuss is a platform to share and exchange ideas, designed to accomodate more on user interaction, such as threaded comments.",
-    features:
-      "The UI features including dark mode, dialog based interactions (creating post, submitting form, viewing post), threaded comments style, infinite fetch posts (server-side pagination), tags categories, and also multi-step validation form. In server-side it also has authentication and authorization system (jwt-token).",
-    height: 74,
-    gif: "https://media4.giphy.com/media/j3mZ0w4038EKNMtZuI/giphy.gif",
-    linkto: "https://github.com/falahsuta/Projects-1-Unamed",
-    giflink: "https://media2.giphy.com/media/iFsJzdqaQ3v66NGXXZ/giphy.gif",
+  "GoTo Group": {
+    stacks:
+      "Java, Kotlin (Spring Boot), Ruby on Rails, React, Alicloud, HAProxy, Istio, Grafana",
+    descriptions: [
+      "Building and maintaining services for Midtrans, GoTo’s payment gateway business entity ~USD 2B+ in monthly transaction value.",
+      "Led a critical payout service migration to Alibaba Cloud, ~50% cost reduction on cloud provider switch cost for a system processing ~1M+ daily payout requests.",
+      "Led cloud cost further reduction by consolidating staging databases in payment clusters, reduced 272 VM to 24 VM, generating ~USD 10K in monthly savings.",
+      "Delivered new payout features as part of strategic merchant onboarding deals, enabling ~IDR 500B in monthly transaction volume.",
+      "Resolved regulator-mandated security findings, ensuring compliance for remittance and disbursement licenses supporting high-margin transaction products.",
+      "Deprecated, unified, and rewrote legacy services to reduce technical debt and improve developer productivity.",
+      "Handled day-to-day production operations, covering merchant integrations issues, incident response, downtime management, and post-mortem improvements for reducing manual operational toil.",
+      "Onboarded and mentored new engineers by improving documentation, workflows, and hands-on support for live merchant issues.",
+    ],
+    height: 88,
   },
-  "Info Extractor": {
-    stacks: "Flask (Python)",
-    descriptions:
-      "Web based app to extract relevant information within news / article such as dates of events, or number of peoples involed.",
+  "Tokopedia": {
+    stacks: "Go, Consul KV, Redis, NSQ, MySQL, Grafana, Datadog",
+    descriptions: [
+      "Worked on backend services for “Logistic Orchestra”, Tokopedia’s logistics orchestration platform optimizing multi-vendor, multi-mile routing for cost and SLA efficiency.",
+      "Built job processors and alerting systems for SLA monitoring across vendors, incorporating recurring production issues into metrics and dashboards to surface delayed shipments across logistics stages.",
+      "Implemented dynamic configuration rollouts using Consul KV to enable experimentation without service redeployment.",
+    ],
     features:
       "Input is very open to any news/articles related, search-engine styles app that gives all information relevant. It uses variance algorithm to extract the information such as boyer moore, KMP, and simple regex",
-    gif: "https://media3.giphy.com/media/J4hThbQO89hS5HHp2m/giphy.gif",
-    height: 70,
-    linkto: "https://github.com/falahsuta/Info-Extraction",
-    giflink: "https://media2.giphy.com/media/hqg68DMCEhLhvekK3d/giphy.gif",
+    height: 52,
   },
-  Portofolio: {
-    stacks: "React (Javascript)",
-    descriptions: "Portofolio web written in react to showcase projects.",
+  "DOKU": {
+    stacks: "Katalon Studio, Java/Groovy, MS. Excel",
+    descriptions: [
+      "Maintained large-scale automated test suites using Katalon Studio (Java/Groovy).",
+      "Automated payment integration tests for virtual account flows across multiple banks.",
+    ],
     features:
       "Single page application, page transition, some dialog interactions, and simple animations",
-    height: 63,
-    gif: "https://media3.giphy.com/media/RG4AAhncolcEuHNiox/giphy.gif",
-    linkto: "https://github.com/falahsuta/Personal-Web-",
-    giflink: "https://media3.giphy.com/media/UWzoTLkoxDW8t1EASN/giphy.gif",
+    height: 36,
   },
 };

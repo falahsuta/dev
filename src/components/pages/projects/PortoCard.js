@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import cx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -11,6 +11,9 @@ import { Dialog, Paper, Slide } from "@material-ui/core";
 
 import DialProj from "./DialProj";
 import { detailData } from "./data-detail-proj";
+
+const FALLBACK_IMAGE_URL =
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2000px-Git_icon.svg.png";
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   root: {
@@ -74,11 +77,23 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const PortoCard = (props) => {
   const styles = useStyles();
   const [openClick, setOpenClick] = useState(false);
+  const [mediaFailed, setMediaFailed] = useState(false);
   const {
     button: buttonStyles,
     ...contentStyles
   } = useBlogTextInfoContentStyles();
   const shadowStyles = useOverShadowStyles();
+
+  const mediaUrl = useMemo(() => {
+    const primary = detailData[props.header]?.gif || "";
+    if (!primary) {
+      return FALLBACK_IMAGE_URL;
+    }
+    if (mediaFailed) {
+      return FALLBACK_IMAGE_URL;
+    }
+    return primary;
+  }, [mediaFailed, props.header]);
 
   const handleClickClose = () => {
     setOpenClick(false);
@@ -90,13 +105,13 @@ const PortoCard = (props) => {
         <Paper elevation={0} className={cx(styles.root, shadowStyles.root)}>
           <CardMedia
             className={styles.media}
-            image={detailData[props.header]?.gif || ""}
+            image={mediaUrl}
+            onError={() => setMediaFailed(true)}
           />
           <CardContent>
             <TextInfoContent
               classes={contentStyles}
               heading={props.header}
-              // body={detailData[props.header].descriptions}
               body={props.text}
             />
             <Button onClick={() => setOpenClick(true)} className={buttonStyles}>
