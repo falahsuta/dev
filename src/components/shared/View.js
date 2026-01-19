@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/styles";
 import { CSSTransition } from "react-transition-group";
 
 import "../../style/Compat.css";
-import Logo from "./Logo";
+import Logo from "../pages/about/Logo";
 
 const useStyles = makeStyles({
   header: {
