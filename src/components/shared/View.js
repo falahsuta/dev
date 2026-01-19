@@ -5,6 +5,7 @@ import { CSSTransition } from "react-transition-group";
 
 import "../../style/Compat.css";
 import Logo from "../pages/about/Logo";
+import logoContentLink from "../pages/about/logo-content-link";
 
 const useStyles = makeStyles({
   header: {
@@ -19,6 +20,8 @@ const View = (props) => {
   const classes = useStyles();
   const [isShow, setIsShow] = useState(false);
   const [isLogo, setIsLogo] = useState(false);
+
+  const githubLogo = logoContentLink.find((item) => item.key === "github");
 
   useEffect(() => {
     setTimeout(() => {
@@ -68,9 +71,10 @@ const View = (props) => {
             unmountOnExit
           >
             <Logo
-              text="Github"
+              text={githubLogo?.text}
               rep="Repository"
-              iconClass={{ line: "ri-github-line", fill: "ri-github-fill" }}
+              linkto={githubLogo?.href}
+              iconClass={githubLogo?.iconClass}
               mobile={props.mobile || props.edge}
             />
           </CSSTransition>

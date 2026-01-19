@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Paper, Grid } from "@material-ui/core";
 import Logo from "../about/Logo";
+import logoContentLink from "../about/logo-content-link";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,6 +25,8 @@ const useStyles = makeStyles((theme) => ({
 const DialProj = (props) => {
   const { data } = props;
   const classes = useStyles(data);
+
+  const githubLogo = logoContentLink.find((item) => item.key === "github");
 
   return (
     <div className={classes.root}>
@@ -105,8 +108,12 @@ const DialProj = (props) => {
                 marginTop: data.header === "15-Puzzle Solver" ? "30px" : "25px",
               }}
             >
-              {/* <div style={{ marginLeft: "255px", marginTop: "32px" }}> */}
-              <Logo text="Github" rep="Repository" linkto={data.linkto} iconClass={{ line: "ri-github-line", fill: "ri-github-fill" }} />
+              <Logo
+                text={githubLogo?.text || "Github"}
+                rep={"Repository"}
+                linkto={data.linkto}
+                iconClass={githubLogo?.iconClass}
+              />
             </div>
           </div>
         </Grid>

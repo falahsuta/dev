@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Paper, Grid } from "@material-ui/core";
 import Logo from "../about/Logo";
+import logoContentLink from "../about/logo-content-link";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,6 +27,8 @@ const DialProj = (props) => {
   const classes = useStyles(data);
 
   const hasBullets = Array.isArray(data?.descriptions);
+
+  const resumeLogo = logoContentLink.find((item) => item.key === "resume");
 
   return (
     <div className={classes.root}>
@@ -87,10 +90,10 @@ const DialProj = (props) => {
               }}
             >
               <Logo
-                text="Resume"
-                rep="Resume/CV"
-                linkto="https://instagram.com/falahsutawindaya"
-                iconClass={{line: "ri-suitcase-line", fill: "ri-suitcase-fill"}}
+                text={resumeLogo?.text}
+                rep={resumeLogo?.rep}
+                linkto={resumeLogo?.href}
+                iconClass={resumeLogo?.iconClass}
               />
             </div>
           </div>
