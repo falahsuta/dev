@@ -1,6 +1,6 @@
-import gotoLogo from "../../shared/logo/1.png";
-import tokpedLogo from "../../shared/logo/5.png";
-import dokuLogo from "../../shared/logo/4.png";
+import gotoLogo from "./logo/1.png";
+import tokpedLogo from "./logo/5.png";
+import dokuLogo from "./logo/4.png";
 
 export const data = [
   {
