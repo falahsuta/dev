@@ -48,7 +48,7 @@
   cursor: pointer;
 }
 
-.selected-card span {
+.selected-card .card-text {
   margin-right: 33px;
 }
 
@@ -69,6 +69,10 @@
   -moz-transform: translate(-1.2em, 0);
   -o-transform: translate(-1.2em, 0);
   -ms-transform: translate(-1.2em, 0);
+}
+
+.card-text-nowrap {
+  white-space: nowrap;
 }
 
 .first-enter {
@@ -96,5 +100,32 @@
 @keyframes blinker {
   50% {
     opacity: 0;
+  }
+}
+
+.card-underscore,
+.card-underscore span {
+  margin-right: 0;
+}
+
+.card-underscore {
+  margin-right: 0;
+  display: inline-block;
+  transform: translateX(-7px);
+}
+
+@media (max-width: 600px) {
+  .container-card {
+    width: 100%;
+    padding-right: 0;
+    margin-right: 0;
+  }
+
+  .card {
+    margin-left: 0;
+  }
+
+  .card-underscore {
+    transform: none;
   }
 }

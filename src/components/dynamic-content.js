@@ -2,7 +2,7 @@ export default {
   Home: {
     line1: "Hi,",
     line2: "I'm Falah,",
-    line3: "Web Developer.",
+    line3: "Software Engineer.",
   },
   "About Me": {
     title: "About Me",

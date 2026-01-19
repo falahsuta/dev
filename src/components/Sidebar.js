@@ -19,11 +19,11 @@ const Sidebar = () => {
     }, 300);
   }, []);
 
-  const menus = ["Home", "Projects", "About Me"].map((menu, index) => {
+  const menus = ["Home", "Projects", "About Me"].map((menu) => {
     return (
       <div
         key={menu}
-        className={`card ${menu === onSelect && "selected-card"}`}
+        className={`card ${menu === onSelect ? "selected-card" : ""}`}
         onMouseEnter={() => {
           setOnMenu(menu);
         }}
@@ -48,25 +48,14 @@ const Sidebar = () => {
         }}
       >
         <span
-          className={`card-text && ${
-            menu === onMenu && onSelect !== onMenu && "moving-left"
-          }`}
+          className={`card-text ${
+            menu === onMenu && onSelect !== onMenu ? "moving-left" : ""
+          } ${menu === "About Me" ? "card-text-nowrap" : ""}`}
         >
           {menu}
         </span>
 
-        <span
-          style={{
-            color: "rgba(40, 40, 40, 0.899)",
-            cursor: "pointer",
-            marginRight: "-13px",
-            marginBottom: "2px",
-            fontSize: "15px",
-            transition: "all 0.1s ease-in-out",
-            opacity: "0.75",
-          }}
-          className="blink"
-        >
+        <span className="blink card-underscore">
           {!icon && menu === onSelect && <span> _</span>}
         </span>
       </div>

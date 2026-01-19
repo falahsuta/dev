@@ -113,7 +113,7 @@ const Content = () => {
             style={paragraph}
             ref={smallText}
           >
-            Passionate in Front-End Dev / Webdev in general
+            Passionate in Computer Science in General
           </p>
         )}
 
