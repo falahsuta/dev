@@ -1,10 +1,10 @@
 import React from "react";
-import Experience from "../../../pages/experience/Experience";
+import MobileExperienceContent from "./MobileExperienceContent";
 
 const MobileExperience = () => {
   return (
     <div className="m-page">
-      <Experience />
+      <MobileExperienceContent />
     </div>
   );
 };

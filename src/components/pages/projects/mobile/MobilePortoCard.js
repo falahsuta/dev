@@ -1,0 +1,130 @@
+import React, { useMemo, useState } from "react";
+import cx from "clsx";
+import { makeStyles } from "@material-ui/core/styles";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import Button from "@material-ui/core/Button";
+import TextInfoContent from "@mui-treasury/components/content/textInfo";
+import { useBlogTextInfoContentStyles } from "@mui-treasury/styles/textInfoContent/blog";
+import { useOverShadowStyles } from "@mui-treasury/styles/shadow/over";
+import { Dialog, Paper, Slide } from "@material-ui/core";
+
+import MobileDialProj from "./MobileDialProj";
+import { detailData } from "../data-detail-proj";
+
+const FALLBACK_IMAGE_URL =
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2000px-Git_icon.svg.png";
+
+const useStyles = makeStyles(({ breakpoints, spacing }) => ({
+  root: {
+    margin: "auto",
+    borderRadius: spacing(2),
+    transition: "0.3s",
+    boxShadow: "0px 3px 15px rgba(0,0,0,0.2)",
+    position: "relative",
+    marginLeft: "auto",
+    overflow: "initial",
+    background: "rgba(249, 249, 249, 0.9)",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    width: 320,
+    [breakpoints.up("xs")]: {
+      flexDirection: "row",
+    },
+  },
+  media: {
+    width: "88%",
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginTop: spacing(-3),
+    height: 0,
+    paddingBottom: "42%",
+    borderRadius: spacing(2),
+    backgroundColor: "#fff",
+    position: "relative",
+    [breakpoints.up("xs")]: {
+      width: "100%",
+      marginLeft: spacing(-3),
+      marginTop: 0,
+      transform: "translateX(-8px)",
+    },
+  },
+  content: {
+    padding: 24,
+  },
+  cta: {
+    marginTop: 24,
+    textTransform: "initial",
+  },
+}));
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
+const MobilePortoCard = (props) => {
+  const styles = useStyles();
+  const [openClick, setOpenClick] = useState(false);
+  const [mediaFailed, setMediaFailed] = useState(false);
+  const {
+    button: buttonStyles,
+    ...contentStyles
+  } = useBlogTextInfoContentStyles();
+  const shadowStyles = useOverShadowStyles();
+
+  const mediaUrl = useMemo(() => {
+    const primary = detailData[props.header]?.gif || "";
+    if (!primary) {
+      return FALLBACK_IMAGE_URL;
+    }
+    if (mediaFailed) {
+      return FALLBACK_IMAGE_URL;
+    }
+    return primary;
+  }, [mediaFailed, props.header]);
+
+  const handleClickClose = () => {
+    setOpenClick(false);
+  };
+
+  return (
+    <>
+      <div style={{ userSelect: "none" }}>
+        <Paper elevation={0} className={cx(styles.root, shadowStyles.root)}>
+          <CardMedia
+            className={styles.media}
+            image={mediaUrl}
+            onError={() => setMediaFailed(true)}
+          />
+          <CardContent>
+            <TextInfoContent
+              classes={contentStyles}
+              heading={props.header}
+              body={props.text}
+            />
+            <Button onClick={() => setOpenClick(true)} className={buttonStyles}>
+              Documentation
+            </Button>
+          </CardContent>
+        </Paper>
+      </div>
+      <Dialog
+        open={openClick}
+        TransitionComponent={Transition}
+        onClose={handleClickClose}
+        aria-labelledby="alert-dialog-slide-title"
+        aria-describedby="alert-dialog-slide-description"
+        maxWidth="lg"
+        scroll="paper"
+        disableScrollLock
+        PaperComponent={() => (
+          <MobileDialProj header={props.header} data={detailData[props.header]} />
+        )}
+      />
+    </>
+  );
+};
+
+export default React.memo(MobilePortoCard);
+

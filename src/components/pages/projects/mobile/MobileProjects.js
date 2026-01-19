@@ -1,10 +1,10 @@
 import React from "react";
-import ContentProject from "../../../pages/projects/ContentProject";
+import MobileProjectsContent from "./MobileProjectsContent";
 
 const MobileProjects = () => {
   return (
     <div className="m-page">
-      <ContentProject />
+      <MobileProjectsContent />
     </div>
   );
 };

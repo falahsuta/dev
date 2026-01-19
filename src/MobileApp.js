@@ -82,7 +82,7 @@ const MobileApp = () => {
                             classNames="m-page"
                             unmountOnExit
                         >
-                            <div ref={pageRef}>
+                            <div ref={pageRef} className="m-pageHost">
                                 {navKey === "Home" && <MobileHome />}
                                 {navKey === "Experience" && <MobileExperience />}
                                 {navKey === "Projects" && <MobileProjects />}

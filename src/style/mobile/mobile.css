@@ -31,6 +31,36 @@
   flex: 1;
   padding: 20px 16px 12px;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.m-content > * {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.m-content > * > * {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.m-page {
+  width: 100%;
+  flex: 1;
+  /*min-height: 0;*/
+  height: 100vh;
+}
+
+.m-pageHost {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .m-nav {
@@ -60,10 +90,6 @@
 
 .m-menuItem.is-selected {
   background: #e2e2e2;
-}
-
-.m-page {
-  width: 100%;
 }
 
 .m-about {
@@ -194,3 +220,41 @@
   transform: translateY(-0.4em);
   transition: opacity 300ms ease, transform 300ms ease;
 }
+
+.m-scrollUp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.m-scrollUpIcons {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+}
+
+.m-scrollUpIconsInner {
+  margin-top: 30px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.m-scrollUpIconsInner i:first-child {
+  margin-bottom: -19px;
+}
+
+.m-scrollUpLabel {
+  font-size: 14px;
+  margin-top: 36px;
+  font-family: "Recursive", sans-serif;
+}
+
+
