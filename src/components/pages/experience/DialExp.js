@@ -90,6 +90,7 @@ const DialProj = (props) => {
                 text="Resume"
                 rep="Resume/CV"
                 linkto="https://instagram.com/falahsutawindaya"
+                iconClass={{line: "ri-suitcase-line", fill: "ri-suitcase-fill"}}
               />
             </div>
           </div>
