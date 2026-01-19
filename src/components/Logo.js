@@ -4,6 +4,14 @@ import "../style/Scroll.css";
 const Logo = (props) => {
   const [isShown, setIsShown] = useState(false);
 
+  const getIconSlug = (text) => {
+    const lower = String(text || "").toLowerCase();
+    if (lower === "resume") {
+      return "suitcase";
+    }
+    return lower;
+  };
+
   // On Hover
   const handleOpen = () => {
     setIsShown(true);
@@ -58,8 +66,8 @@ const Logo = (props) => {
               }}
               className={
                 isShown
-                  ? `ri-${props.text.toLowerCase()}-fill`
-                  : `ri-${props.text.toLowerCase()}-line`
+                  ? `ri-${getIconSlug(props.text)}-fill`
+                  : `ri-${getIconSlug(props.text)}-line`
               }
             ></i>
           </div>

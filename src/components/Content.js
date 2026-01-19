@@ -117,6 +117,15 @@ const Content = () => {
           </p>
         )}
 
+          <CSSTransition
+              in={nav === "Experience"}
+              timeout={4300}
+              classNames="alert"
+              unmountOnExit
+          >
+              <div>{nav === "Experience" && <>Work In Progress</>}</div>
+          </CSSTransition>
+
         <CSSTransition
           in={nav === "Projects"}
           timeout={4300}

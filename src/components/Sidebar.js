@@ -19,7 +19,7 @@ const Sidebar = () => {
     }, 300);
   }, []);
 
-  const menus = ["Home", "Projects", "About Me"].map((menu) => {
+  const menus = ["Home", "Experience", "Projects", "About Me"].map((menu) => {
     return (
       <div
         key={menu}

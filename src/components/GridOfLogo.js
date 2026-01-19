@@ -1,30 +1,37 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
 import Logo from "./Logo";
 
 const GridOfLogo = () => {
   return (
-    <>
-      <div style={{ width: "330px", marginLeft: "110px", marginTop: "150px" }}>
-        <Grid container direction="row" justify="center" alignItems="center">
-          <Grid item xs>
-            <Logo text="Github" linkto="https://github.com/falahsuta" />
-          </Grid>
-          <Grid item xs>
-            <Logo
-              text="Linkedin"
-              linkto="https://www.linkedin.com/in/falah-sutawindaya/"
-            />
-          </Grid>
-          <Grid item xs>
-            <Logo
-              text="Instagram"
-              linkto="https://instagram.com/falahsutawindaya"
-            />
-          </Grid>
-        </Grid>
+    <div
+      style={{
+        marginTop: "150px",
+        width: "100%",
+        display: "grid",
+        gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+        justifyItems: "center",
+        alignItems: "center",
+        rowGap: "18px",
+        paddingRight: "32px",
+        boxSizing: "border-box",
+      }}
+    >
+      <div style={{ marginLeft: -10, marginRight: 0 }}>
+        <Logo text="Github" linkto="https://github.com/falahsuta" />
       </div>
-    </>
+      <div style={{ marginLeft: 0, marginRight: 15 }}>
+        <Logo
+          text="Linkedin"
+          linkto="https://www.linkedin.com/in/falah-sutawindaya/"
+        />
+      </div>
+      <div style={{ marginLeft: 0, marginRight: 5 }}>
+        <Logo text="Instagram" linkto="https://instagram.com/falahsutawindaya" />
+      </div>
+      <div style={{ marginLeft: 30, marginRight: 0 }}>
+        <Logo text="Resume" linkto="https://instagram.com/falahsutawindaya" />
+      </div>
+    </div>
   );
 };
 

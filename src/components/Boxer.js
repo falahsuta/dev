@@ -47,7 +47,13 @@ const Boxer = () => {
                   </div>
                 </Grid>
                 <Grid item xs={3}>
-                  <div style={{ marginRight: "100px", marginTop: "130px" }}>
+                  <div
+                    style={{
+                      marginRight: "95px",
+                      marginTop: "120px",
+                      // paddingBottom: "24px",
+                    }}
+                  >
                     <Sidebar />
                   </div>
                 </Grid>
