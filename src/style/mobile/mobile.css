@@ -148,3 +148,49 @@
   font-size: 14px;
   font-weight: 600;
 }
+
+.font-anime {
+  font-family: "Recursive", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 600;
+  font-size: 14px;
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  font-stretch: normal;
+}
+
+.m-letter {
+  display: inline-block;
+  line-height: 1em;
+  transform-origin: 0 0;
+}
+
+.ml12 .m-lettera {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.m-page-enter {
+  opacity: 0;
+  transform: translateY(0.8em);
+}
+
+.m-page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 650ms ease, transform 650ms ease;
+}
+
+.m-page-exit {
+  opacity: 1;
+}
+
+.m-page-exit-active {
+  opacity: 0;
+  transform: translateY(-0.4em);
+  transition: opacity 300ms ease, transform 300ms ease;
+}

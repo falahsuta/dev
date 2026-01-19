@@ -114,7 +114,7 @@ const Content = () => {
             style={paragraph}
             ref={smallText}
           >
-            Passionate in Computer Science in General
+            {content["Home"]["line4"]}
           </p>
         )}
 
