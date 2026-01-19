@@ -8,6 +8,7 @@ import "../style/Content.css";
 import content from "./dynamic-content";
 import ContentAbout from "./ContentAbout";
 import ContentProject from "./ContentProject";
+import Experience from "./Experience";
 
 const useStyles = makeStyles({
   header: {
@@ -123,7 +124,7 @@ const Content = () => {
               classNames="alert"
               unmountOnExit
           >
-              <div>{nav === "Experience" && <>Work In Progress</>}</div>
+              <div>{nav === "Experience" && <Experience />}</div>
           </CSSTransition>
 
         <CSSTransition
