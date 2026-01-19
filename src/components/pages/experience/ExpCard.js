@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import cx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
-import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 import TextInfoContent from "@mui-treasury/components/content/textInfo";
 import { useBlogTextInfoContentStyles } from "@mui-treasury/styles/textInfoContent/blog";
 import { useOverShadowStyles } from "@mui-treasury/styles/shadow/over";
 import { Dialog, Paper, Slide } from "@material-ui/core";
 
-import DialProj from "./DialProj";
-import { detailData } from "./data-detail-proj";
+import DialProj from "../projects/DialProj";
+import { detailData } from "./exp-data-detail";
 
-const useStyles = makeStyles(({ breakpoints, spacing }) => ({
+const useStyles = makeStyles(({ breakpoints, spacing, palette, typography }) => ({
   root: {
     margin: "auto",
     borderRadius: spacing(2),
@@ -25,7 +25,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    width: 320,
+    width: 340,
     [breakpoints.up("xs")]: {
       flexDirection: "row",
     },
@@ -65,6 +65,43 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     marginTop: 24,
     textTransform: "initial",
   },
+  headingTight: {
+    lineHeight: 1.25,
+    marginBottom: -10,
+  },
+  meta: {
+    color: palette.text.secondary,
+    fontSize: typography.pxToRem(13),
+    lineHeight: 1.25,
+    marginTop: spacing(-1),
+    marginBottom: spacing(1),
+    whiteSpace: "pre-line",
+  },
+  desc: {
+    marginTop: spacing(2),
+    marginBottom: spacing(3.5),
+  },
+  headerRow: {
+    display: "flex",
+    alignItems: "center",
+    flexWrap: "nowrap",
+    minWidth: 0,
+  },
+  headerLogo: {
+    width: 45,
+    height: 45,
+    objectFit: "contain",
+    flex: "0 0 auto",
+    marginLeft: spacing(0.2),
+    marginTop: spacing(0.5),
+    marginRight: spacing(1.0),
+  },
+  headerText: {
+    minWidth: 0,
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+  },
 }));
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -84,26 +121,45 @@ const PortoCard = (props) => {
     setOpenClick(false);
   };
 
+  const metaText = props.splitMeta
+    ? [props.role, props.tenure].filter(Boolean).join("\n")
+    : [props.role, props.tenure].filter(Boolean).join(" | ");
+
   return (
     <>
       <div style={{ userSelect: "none" }}>
         <Paper elevation={0} className={cx(styles.root, shadowStyles.root)}>
-          <CardMedia
-            className={styles.media}
-            image={
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2000px-Git_icon.svg.png"
-            }
-            // image={detailData[props.header].gif}
-          />
           <CardContent>
             <TextInfoContent
               classes={contentStyles}
-              heading={props.header}
-              // body={detailData[props.header].descriptions}
+              heading={
+                <span className={styles.headerRow}>
+                  {props.logo && (
+                    <img
+                      src={props.logo}
+                      alt={`${props.header} logo`}
+                      className={styles.headerLogo}
+                    />
+                  )}
+                  <span className={styles.headerText}>{props.header}</span>
+                </span>
+              }
+              body={null}
+              headingProps={{ className: styles.headingTight }}
+            />
+            {metaText && (
+              <Typography variant="body2" className={styles.meta}>
+                {metaText}
+              </Typography>
+            )}
+            <TextInfoContent
+              classes={contentStyles}
+              heading={null}
               body={props.text}
+              bodyProps={{ className: styles.desc }}
             />
             <Button onClick={() => setOpenClick(true)} className={buttonStyles}>
-              Documentation
+              Experience Details
             </Button>
           </CardContent>
         </Paper>

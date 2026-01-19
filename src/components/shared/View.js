@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import { CSSTransition } from "react-transition-group";
 
-import "../style/Compat.css";
+import "../../style/Compat.css";
 import Logo from "./Logo";
 
 const useStyles = makeStyles({

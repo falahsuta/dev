@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Paper, Container, Grid } from "@material-ui/core";
 
-import Content from "./Content";
+import Content from "../pages/home/Content";
 import Sidebar from "./Sidebar";
 
 const useStyles = makeStyles((theme) => ({

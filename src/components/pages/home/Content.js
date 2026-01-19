@@ -4,11 +4,11 @@ import { CSSTransition } from "react-transition-group";
 import anime from "animejs";
 import { useSelector } from "react-redux";
 
-import "../style/Content.css";
 import content from "./dynamic-content";
-import ContentAbout from "./ContentAbout";
-import ContentProject from "./ContentProject";
-import Experience from "./Experience";
+import ContentAbout from "../about/ContentAbout";
+import ContentProject from "../projects/ContentProject";
+import Experience from "../experience/Experience";
+import "../../../style/Content.css";
 
 const useStyles = makeStyles({
   header: {

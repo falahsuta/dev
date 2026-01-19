@@ -3,7 +3,7 @@ import ScrollHorizontal from "react-scroll-horizontal";
 
 import { data } from "./exp-data";
 import ExpCard from "./ExpCard";
-import ScrollUp from "./ScrollUp";
+import ScrollUp from "../../shared/ScrollUp";
 
 const Experience = () => {
   return (
@@ -25,9 +25,8 @@ const Experience = () => {
                 : "100px 45px";
 
             return (
-              <div style={{ margin }}>
+              <div key={element.header} style={{ margin }}>
                 <ExpCard
-                  key={element.header}
                   header={element.header}
                   role={element.role}
                   tenure={element.tenure}

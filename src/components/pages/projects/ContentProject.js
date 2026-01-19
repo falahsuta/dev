@@ -1,9 +1,9 @@
 import React from "react";
 import ScrollHorizontal from "react-scroll-horizontal";
 
+import ScrollUp from "../../shared/ScrollUp";
 import { data } from "./data-proj";
 import PortoCard from "./PortoCard";
-import ScrollUp from "./ScrollUp";
 
 const ContentProject = () => {
   return (
@@ -25,12 +25,8 @@ const ContentProject = () => {
                 : "100px 45px";
 
             return (
-              <div style={{ margin }}>
-                <PortoCard
-                  key={element.header}
-                  header={element.header}
-                  text={element.text}
-                />
+              <div key={element.header} style={{ margin }}>
+                <PortoCard header={element.header} text={element.text} />
               </div>
             );
           })}
@@ -43,4 +39,4 @@ const ContentProject = () => {
   );
 };
 
-export default React.memo(ContentProject);
+export default ContentProject;

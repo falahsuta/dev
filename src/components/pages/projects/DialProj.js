@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Paper, Grid } from "@material-ui/core";
-import Logo from "./Logo";
+import Logo from "../../shared/Logo";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,6 +56,7 @@ const DialProj = (props) => {
                 }}
                 onClick={() => window.open(data.giflink, "_blank")}
                 src={data.gif}
+                alt={`${props.header} preview`}
               />
             </div>
             <p

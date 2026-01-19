@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 import { useDispatch } from "react-redux";
 
-import { selectNav } from "../actions";
-import "../style/Sidebar.css";
+import { selectNav } from "../../actions";
+import "../../style/Sidebar.css";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
