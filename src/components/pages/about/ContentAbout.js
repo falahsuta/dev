@@ -1,6 +1,6 @@
 import React from "react";
 import GridOfLogo from "./GridOfLogo";
-import content from "../home/dynamic-content";
+import content from "./dynamic-content";
 
 const ContentAbout = (props) => {
   const { nav } = props;
