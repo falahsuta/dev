@@ -5,12 +5,12 @@ import "../../../style/Scroll.css";
 const Logo = (props) => {
   const [isShown, setIsShown] = useState(false);
 
-  const getIconSlug = (text) => {
-    const lower = String(text || "").toLowerCase();
-    if (lower === "resume") {
-      return "suitcase";
+  const getIconClassName = () => {
+    if (props.iconClass && typeof props.iconClass === "object") {
+      const cls = isShown ? props.iconClass.fill : props.iconClass.line;
+      return typeof cls === "string" ? cls : "";
     }
-    return lower;
+    return "";
   };
 
   // On Hover
@@ -65,11 +65,7 @@ const Logo = (props) => {
                 marginBottom: "-39px",
                 cursor: "pointer",
               }}
-              className={
-                isShown
-                  ? `ri-${getIconSlug(props.text)}-fill`
-                  : `ri-${getIconSlug(props.text)}-line`
-              }
+              className={getIconClassName()}
             ></i>
           </div>
         </div>

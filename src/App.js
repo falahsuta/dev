@@ -4,11 +4,10 @@ import { useDispatch } from "react-redux";
 import { selectNav } from "./actions";
 
 import Boxer from "./components/shared/Boxer";
-import View from "./components/shared/View";
+import MobileApp from "./MobileApp";
 
 const App = () => {
   const dispatch = useDispatch();
-  const Mark = "Mark";
 
   useEffect(() => {
     dispatch(selectNav("Home"));
@@ -17,7 +16,8 @@ const App = () => {
   return (
     <>
       {!isMobile && <Boxer />}
-      {isMobile && <View mobile={Mark} />}
+      {isMobile && <MobileApp />}
+      {/*  {isMobile && <View mobile={Mark} />} */}
     </>
   );
 };

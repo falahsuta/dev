@@ -106,7 +106,7 @@ const DialProj = (props) => {
               }}
             >
               {/* <div style={{ marginLeft: "255px", marginTop: "32px" }}> */}
-              <Logo text="Github" rep="Repository" linkto={data.linkto} />
+              <Logo text="Github" rep="Repository" linkto={data.linkto} iconClass={{ line: "ri-github-line", fill: "ri-github-fill" }} />
             </div>
           </div>
         </Grid>

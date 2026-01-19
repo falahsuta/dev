@@ -1,5 +1,13 @@
 import React from "react";
 import Logo from "./Logo";
+import items from "./logo-content-link";
+
+const styleByKey = {
+  github: { marginLeft: -10, marginRight: 0 },
+  linkedin: { marginLeft: 0, marginRight: 15 },
+  instagram: { marginLeft: 0, marginRight: 5 },
+  resume: { marginLeft: 30, marginRight: 0 },
+};
 
 const GridOfLogo = () => {
   return (
@@ -16,21 +24,16 @@ const GridOfLogo = () => {
         boxSizing: "border-box",
       }}
     >
-      <div style={{ marginLeft: -10, marginRight: 0 }}>
-        <Logo text="Github" linkto="https://github.com/falahsuta" />
-      </div>
-      <div style={{ marginLeft: 0, marginRight: 15 }}>
-        <Logo
-          text="Linkedin"
-          linkto="https://www.linkedin.com/in/falah-sutawindaya/"
-        />
-      </div>
-      <div style={{ marginLeft: 0, marginRight: 5 }}>
-        <Logo text="Instagram" linkto="https://instagram.com/falahsutawindaya" />
-      </div>
-      <div style={{ marginLeft: 30, marginRight: 0 }}>
-        <Logo text="Resume" linkto="https://instagram.com/falahsutawindaya" rep="Resume/CV"/>
-      </div>
+      {items.map((item) => (
+        <div key={item.key} style={styleByKey[item.key]}>
+          <Logo
+            text={item.text}
+            linkto={item.href}
+            rep={item.rep}
+            iconClass={item.iconClass}
+          />
+        </div>
+      ))}
     </div>
   );
 };

@@ -70,6 +70,7 @@ const View = (props) => {
             <Logo
               text="Github"
               rep="Repository"
+              iconClass={{ line: "ri-github-line", fill: "ri-github-fill" }}
               mobile={props.mobile || props.edge}
             />
           </CSSTransition>
