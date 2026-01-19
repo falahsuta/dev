@@ -5,7 +5,7 @@ import { data } from "./data-proj";
 import PortoCard from "./PortoCard";
 import ScrollUp from "./ScrollUp";
 
-const ContentProj = () => {
+const ContentProject = () => {
   return (
     <>
       <div
@@ -43,4 +43,4 @@ const ContentProj = () => {
   );
 };
 
-export default React.memo(ContentProj);
+export default React.memo(ContentProject);

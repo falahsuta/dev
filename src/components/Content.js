@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import "../style/Content.css";
 import content from "./dynamic-content";
 import ContentAbout from "./ContentAbout";
-import ContentProj from "./ContentProj";
+import ContentProject from "./ContentProject";
 
 const useStyles = makeStyles({
   header: {
@@ -132,7 +132,7 @@ const Content = () => {
           classNames="alert"
           unmountOnExit
         >
-          <div>{nav === "Projects" && <ContentProj />}</div>
+          <div>{nav === "Projects" && <ContentProject />}</div>
         </CSSTransition>
 
         {nav && (
