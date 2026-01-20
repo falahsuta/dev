@@ -105,6 +105,12 @@
   color: rgba(61, 61, 61, 0.82);
 }
 
+@media (min-height: 840px) {
+  .m-about {
+    margin-top: 24px;
+  }
+}
+
 .m-aboutTitle {
   margin: 6px 0 0;
   font-size: 34px;
