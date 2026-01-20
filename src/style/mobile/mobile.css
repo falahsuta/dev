@@ -1,5 +1,7 @@
 .m-root {
   --nav-height: 88px;
+  --m-hero-title-size: 40px;
+  --m-hero-subtitle-size: 16px;
   min-height: 100vh;
   background: #ffffff;
   font-family: "Recursive", sans-serif;
@@ -160,7 +162,7 @@
   padding: 6px 0 0;
   font-family: "Recursive", sans-serif;
   color: rgba(81, 81, 81, 0.94);
-  font-size: 44px;
+  font-size: var(--m-hero-title-size);
   line-height: 1.02;
   font-weight: 800;
   letter-spacing: 0;
@@ -174,8 +176,16 @@
   margin: 14px 0 0;
   font-family: "Recursive", sans-serif;
   color: rgba(81, 81, 81, 0.6);
-  font-size: 14px;
+  font-size: var(--m-hero-subtitle-size);
   font-weight: 600;
+}
+
+.m-heroSubtitle.font-anime {
+  font-size: var(--m-hero-subtitle-size);
+}
+
+.m-heroSubtitle.font-anime.ml12 {
+  font-size: var(--m-hero-subtitle-size);
 }
 
 .font-anime {
@@ -183,7 +193,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  font-size: 14px;
+  font-size: inherit;
   font-style: normal;
   font-variant-ligatures: normal;
   font-variant-caps: normal;
