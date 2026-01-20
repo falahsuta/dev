@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: "20px",
       [theme.breakpoints.down(429)]: {
         width: theme.spacing(54),
-        height: (props) => theme.spacing(props.mobileHeight+2),
+        height: (props) => theme.spacing(props.mobileHeight+3),
       },
     },
   },
