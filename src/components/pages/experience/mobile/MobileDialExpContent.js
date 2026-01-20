@@ -11,15 +11,15 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(1),
       width: theme.spacing(55),
-      height: (props) => theme.spacing(props.mobileHeight),
+      height: (props) => theme.spacing(props.mobileHeight ?? props.height),
       borderRadius: "14px",
       fontFamily: "Recursive",
       fontSize: "14px",
       userSelect: "none",
       marginBottom: "20px",
-      [theme.breakpoints.down(430)]: {
+      "@media (max-width:430px)": {
         width: theme.spacing(54),
-        height: (props) => theme.spacing(props.mobileHeight+4),
+        height: (props) => theme.spacing(((props.mobileHeight ?? props.height) || 0) + 4),
       },
     },
   },

@@ -18,9 +18,9 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "14px",
       userSelect: "none",
       marginBottom: "20px",
-      [theme.breakpoints.down(430)]: {
+      "@media (max-width:430px)": {
         width: theme.spacing(54),
-        height: (props) => theme.spacing(props.mobileHeight+3),
+        height: (props) => theme.spacing(((props.mobileHeight ?? props.height) || 0) + 4),
       },
     },
   },
