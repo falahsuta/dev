@@ -8,6 +8,7 @@ import MobileScrollUp from "../../../shared/mobile/MobileScrollUp";
 const MobileExperienceContent = () => {
     const ref = useRef(null);
 
+    // TODO: hacky way for react-scroll-horizontal, should've use native solution instead
     useEffect(() => {
         const wrapper = ref.current;
         if (!wrapper) return;
@@ -54,9 +55,9 @@ const MobileExperienceContent = () => {
     return (
         <div
             style={{
-                height: "80vh",
+                height: "calc(100dvh - var(--nav-height))",
                 width: "100%",
-                position: "relative", // anchor
+                position: "relative",
                 borderRadius: "20px",
                 overflow: "hidden",
             }}
