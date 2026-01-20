@@ -1,19 +1,19 @@
 export const detailData = {
   "GoTo Group": {
     stacks:
-      "Java, Kotlin (Spring Boot), Ruby on Rails, React, Alicloud, HAProxy, Istio, Grafana",
+      "Java, Kotlin (springboot), Kafka, Ruby on Rails, RabbitMQ, React, Alicloud, HAProxy, Istio, Kong Gateway, Grafana, Kibana, MySQL, Postgres, MongoDB",
     descriptions: [
       "Building and maintaining services for Midtrans, GoTo’s payment gateway business entity ~USD 2B+ in monthly transaction value.",
       "Led a critical payout service migration to Alibaba Cloud, ~50% cost reduction on cloud provider switch cost for a system processing ~1M+ daily payout requests.",
       "Led cloud cost further reduction by consolidating staging databases in payment clusters, reduced 272 VM to 24 VM, generating ~USD 10K in monthly savings.",
-      "Delivered new payout features as part of strategic merchant onboarding deals, enabling ~IDR 500B in monthly transaction volume.",
+      "Delivered new payout features as part of strategic merchant onboarding deals, enabling ~USD 30M in monthly transaction volume.",
       "Resolved regulator-mandated security findings, ensuring compliance for remittance and disbursement licenses supporting high-margin transaction products.",
       "Deprecated, unified, and rewrote legacy services to reduce technical debt and improve developer productivity.",
       "Handled day-to-day production operations, covering merchant integrations issues, incident response, downtime management, and post-mortem improvements for reducing manual operational toil.",
       "Onboarded and mentored new engineers by improving documentation, workflows, and hands-on support for live merchant issues.",
     ],
     height: 88,
-    mobileHeight: 64,
+    mobileHeight: 68,
   },
   "Tokopedia": {
     stacks: "Go, Consul KV, Redis, NSQ, MySQL, Grafana, Datadog",
