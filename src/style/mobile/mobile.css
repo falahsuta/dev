@@ -105,9 +105,9 @@
   color: rgba(61, 61, 61, 0.82);
 }
 
-@media (min-height: 780px) {
+@media (min-height: 760px) {
   .m-about {
-    margin-top: 24px;
+    margin-top: 20px;
   }
 }
 
