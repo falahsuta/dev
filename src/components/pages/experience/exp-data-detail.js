@@ -23,7 +23,7 @@ export const detailData = {
     ],
     features:
       "Input is very open to any news/articles related, search-engine styles app that gives all information relevant. It uses variance algorithm to extract the information such as boyer moore, KMP, and simple regex",
-    height: 52,
+    height: 54,
   },
   "DOKU": {
     stacks: "Katalon Studio, Java/Groovy, MS. Excel",
@@ -33,6 +33,6 @@ export const detailData = {
     ],
     features:
       "Single page application, page transition, some dialog interactions, and simple animations",
-    height: 36,
+    height: 35,
   },
 };

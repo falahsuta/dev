@@ -85,12 +85,14 @@ const MobileExperienceContent = () => {
             <div
                 style={{
                     position: "absolute",
-                    bottom: "16px",
+                    bottom: "calc(var(--nav-height) + -10px)",
                     left: 0,
                     right: 0,
+                    height: "40px",
                     display: "flex",
+                    alignItems: "center",
                     justifyContent: "center",
-                    pointerEvents: "none", // optional
+                    pointerEvents: "none",
                 }}
             >
                 <MobileScrollUp />
