@@ -36,6 +36,6 @@ export const detailData = {
     features:
       "Single page application, page transition, some dialog interactions, and simple animations",
     height: 35,
-    mobileHeight: 35,
+    mobileHeight: 33,
   },
 };

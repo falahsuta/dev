@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: "20px",
       "@media (max-width:430px)": {
         width: theme.spacing(54),
-        height: (props) => theme.spacing(((props.mobileHeight ?? props.height) || 0) + 4),
+        height: (props) => theme.spacing(((props.mobileHeight ?? props.height) || 0) + 2),
       },
     },
   },
