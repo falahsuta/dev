@@ -20,7 +20,7 @@ export const data = [
   },
   {
     header: "DOKU",
-    role: "QA Automation (Intern)",
+    role: "QA Automation (intern)",
     tenure: "March 2021 – Aug 2021",
     logo: dokuLogo,
     text: "Maintained large-scale automated test suites using Katalon Studio (Java/Groovy).",
