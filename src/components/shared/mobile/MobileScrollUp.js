@@ -13,11 +13,11 @@ const MobileScrollUp = (props) => {
     >
       <div className="m-scrollUpIcons">
         <div className="m-scrollUpIconsInner">
-          <i className="ri-arrow-up-s-line"></i>
-          <i className="ri-arrow-drop-up-line"></i>
+          <i className="ri-arrow-right-s-line"></i>
+          <i className="ri-arrow-drop-right-line"></i>
         </div>
       </div>
-      <span className="m-scrollUpLabel">Scroll Up</span>
+      <span className="m-scrollUpLabel">Swipe Right</span>
     </div>
   );
 };
