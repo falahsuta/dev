@@ -297,3 +297,10 @@
 .exp-scroll-wrapper > div {
   touch-action: pan-x;
 }
+
+@media (max-width: 429px) {
+  .m-root {
+    --m-hero-title-size: 34px;
+    --m-hero-subtitle-size: 14px;
+  }
+}

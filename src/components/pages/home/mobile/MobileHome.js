@@ -4,7 +4,7 @@ import content from "../../../pages/home/dynamic-content";
 const MobileHome = () => {
   return (
     <div className="m-page">
-      <h1 className="m-heroTitle">
+      <h1 className="m-heroTitle" style={{marginTop: "33px"}}>
         <span className="m-heroLine" data-anime-title>
           {content.Home.line1}
         </span>
