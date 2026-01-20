@@ -1,9 +1,9 @@
 import React from "react";
 
-import DialExp from "../DialExp";
+import MobileDialExpContent from "./MobileDialExpContent";
 
 const MobileDialExp = (props) => {
-  return <DialExp header={props.header} data={props.data} />;
+  return <MobileDialExpContent header={props.header} data={props.data} />;
 };
 
 export default React.memo(MobileDialExp);

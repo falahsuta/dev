@@ -13,6 +13,7 @@ export const detailData = {
       "Onboarded and mentored new engineers by improving documentation, workflows, and hands-on support for live merchant issues.",
     ],
     height: 88,
+    mobileHeight: 64,
   },
   "Tokopedia": {
     stacks: "Go, Consul KV, Redis, NSQ, MySQL, Grafana, Datadog",
@@ -23,7 +24,8 @@ export const detailData = {
     ],
     features:
       "Input is very open to any news/articles related, search-engine styles app that gives all information relevant. It uses variance algorithm to extract the information such as boyer moore, KMP, and simple regex",
-    height: 54,
+    height: 53,
+    mobileHeight: 52,
   },
   "DOKU": {
     stacks: "Katalon Studio, Java/Groovy, MS. Excel",
@@ -34,5 +36,6 @@ export const detailData = {
     features:
       "Single page application, page transition, some dialog interactions, and simple animations",
     height: 35,
+    mobileHeight: 35,
   },
 };
