@@ -13,7 +13,7 @@ const GridOfLogo = () => {
   return (
     <div
       style={{
-        marginTop: "150px",
+        marginTop: "15px",
         width: "100%",
         display: "grid",
         gridTemplateColumns: "repeat(4, minmax(0, 1fr))",

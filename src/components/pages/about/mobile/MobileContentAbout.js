@@ -8,7 +8,9 @@ const MobileContentAbout = (props) => {
     <div className="m-about">
       <h2 className="m-aboutTitle">{content[nav] ? content[nav].title : ""}</h2>
       <div className="m-aboutDesc">{content[nav] ? content[nav].desc : ""}</div>
-      <div className="m-aboutLogos">
+
+        <div className="m-aboutLogos">
+        <div className="m-aboutDesc">{content[nav] ? content[nav].contact : ""}</div>
         <MobileGridOfLogo />
       </div>
     </div>
