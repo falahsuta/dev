@@ -25,7 +25,7 @@ const logoContentLink = [
 		text: "Resume",
 		label: "Resume/CV",
         iconClass: { line: "ri-suitcase-line", fill: "ri-suitcase-fill" },
-		href: "https://instagram.com/falahsutawindaya",
+		href: "https://drive.google.com/file/d/1dYWr1NCV16PZShSKMlLmCFy-BZ0gVm_b/view?usp=share_link",
 		rep: "Resume/CV",
 	},
 ];
